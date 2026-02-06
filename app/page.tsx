@@ -100,6 +100,7 @@ export default function Home() {
   const [platformContent, setPlatformContent] = useState<PlatformContent | null>(null)
 
   const logsEndRef = useRef<HTMLDivElement>(null)
+  const logCounterRef = useRef(0)
 
   // Auto-scroll logs to bottom
   useEffect(() => {
@@ -107,8 +108,9 @@ export default function Home() {
   }, [agentLogs])
 
   const addLog = (agent_name: string, message: string, type: AgentLog['type'] = 'info') => {
+    logCounterRef.current += 1
     const newLog: AgentLog = {
-      id: Date.now().toString(),
+      id: `${Date.now()}-${logCounterRef.current}`,
       timestamp: new Date(),
       agent_name,
       message,
