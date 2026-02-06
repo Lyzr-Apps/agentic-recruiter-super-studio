@@ -1,0 +1,78 @@
+{
+  "agent_name": "Interview Scheduler Agent",
+  "agent_id": "6985944de17e33c11eed1a7f",
+  "agent_purpose": "Manages interview scheduling with calendar integration and slot proposals",
+  "description": "Checks calendar availability, proposes interview slots to candidates, and books confirmed interviews",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "proposed_slots": [
+        {
+          "date": "string",
+          "time": "string",
+          "duration": "string"
+        }
+      ],
+      "selected_slot": {
+        "date": "string",
+        "time": "string",
+        "duration": "string"
+      },
+      "calendar_event_id": "string",
+      "confirmation_sent": "boolean",
+      "attendees": [
+        "string"
+      ],
+      "meeting_link": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "proposed_slots": [
+        {
+          "date": "2023-12-01",
+          "time": "10:00",
+          "duration": "60min"
+        },
+        {
+          "date": "2023-12-02",
+          "time": "13:00",
+          "duration": "60min"
+        },
+        {
+          "date": "2023-12-03",
+          "time": "15:00",
+          "duration": "60min"
+        }
+      ],
+      "selected_slot": {
+        "date": "2023-12-01",
+        "time": "10:00",
+        "duration": "60min"
+      },
+      "calendar_event_id": "abc123efg456",
+      "confirmation_sent": true,
+      "attendees": [
+        "candidate@example.com",
+        "interviewer@example.com"
+      ],
+      "meeting_link": "https://meet.google.com/xyz-123"
+    },
+    "metadata": {
+      "agent_name": "Interview Scheduler Agent",
+      "timestamp": "2023-11-25T14:30:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T07:15:00.149009",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "raw_text": "It seems there's an issue with accessing the interviewer's calendar to find available slots. Please make sure that the calendar is properly connected or try providing alternative means for accessing the calendar information. Let me know how you would like to proceed!"
+  },
+  "test_passed": false
+}

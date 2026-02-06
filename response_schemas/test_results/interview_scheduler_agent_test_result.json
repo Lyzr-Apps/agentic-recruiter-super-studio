@@ -1,0 +1,15 @@
+{
+  "agent_name": "Interview Scheduler Agent",
+  "agent_id": "6985944de17e33c11eed1a7f",
+  "test_message": "Schedule interview for candidate Emily Watson. Role: Product Manager. Interviewer: hiring.manager@company.com. Preferred times: Next week, mornings preferred. Duration: 60 minutes. Candidate email: emily.watson@email.com",
+  "expected_purpose": "Independent - Schedules interviews",
+  "timestamp": "2026-02-06T07:15:00.148599",
+  "is_valid_json": false,
+  "validation_errors": [
+    "Response is not valid JSON: Expecting value: line 1 column 1 (char 0)"
+  ],
+  "actual_response": {
+    "raw_text": "It seems there's an issue with accessing the interviewer's calendar to find available slots. Please make sure that the calendar is properly connected or try providing alternative means for accessing the calendar information. Let me know how you would like to proceed!"
+  },
+  "raw_response": "It seems there's an issue with accessing the interviewer's calendar to find available slots. Please make sure that the calendar is properly connected or try providing alternative means for accessing the calendar information. Let me know how you would like to proceed!"
+}

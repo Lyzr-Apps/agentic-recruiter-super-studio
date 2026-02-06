@@ -1,0 +1,94 @@
+{
+  "agent_name": "Resume Analyst Agent",
+  "agent_id": "69859423e5d25ce3f598cb88",
+  "agent_purpose": "Analyzes resumes and scores candidates with categorization (Reject/Review/Schedule)",
+  "description": "Parses uploaded resumes, extracts skills/experience, scores candidates against job requirements (0-100), and categorizes as Reject/Review/Schedule",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "candidate_name": "string",
+      "email": "string",
+      "phone": "string",
+      "skills_extracted": [
+        "string"
+      ],
+      "experience_years": "number",
+      "education": "string",
+      "score": "number",
+      "category": "string",
+      "reasoning": "string",
+      "breakdown": {
+        "skills_match": "number",
+        "experience_relevance": "number",
+        "education_alignment": "number",
+        "cultural_fit": "number"
+      }
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "candidate_name": "Sarah Chen",
+      "email": "sarah.chen@email.com",
+      "phone": "+1-555-0123",
+      "skills_extracted": [
+        "Python",
+        "Django",
+        "React",
+        "AWS"
+      ],
+      "experience_years": 6,
+      "education": "BS Computer Science MIT",
+      "score": 88,
+      "category": "Schedule",
+      "reasoning": "Sarah has a strong alignment with the job requirements, showcasing over 6 years of experience with Python, leadership roles at top tech companies, and expertise in cloud services which matches well with AWS expertise. Her educational background from MIT further strengthens her profile.",
+      "breakdown": {
+        "skills_match": 36,
+        "experience_relevance": 27,
+        "education_alignment": 15,
+        "cultural_fit": 10
+      }
+    },
+    "metadata": {
+      "agent_name": "Resume Analyst Agent",
+      "timestamp": "2023-11-23T14:28:34Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T07:14:43.880132",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "candidate_name": "Sarah Chen",
+      "email": "sarah.chen@email.com",
+      "phone": "+1-555-0123",
+      "skills_extracted": [
+        "Python",
+        "Django",
+        "React",
+        "AWS"
+      ],
+      "experience_years": 6,
+      "education": "BS Computer Science MIT",
+      "score": 88,
+      "category": "Schedule",
+      "reasoning": "Sarah has a strong alignment with the job requirements, showcasing over 6 years of experience with Python, leadership roles at top tech companies, and expertise in cloud services which matches well with AWS expertise. Her educational background from MIT further strengthens her profile.",
+      "breakdown": {
+        "skills_match": 36,
+        "experience_relevance": 27,
+        "education_alignment": 15,
+        "cultural_fit": 10
+      }
+    },
+    "metadata": {
+      "agent_name": "Resume Analyst Agent",
+      "timestamp": "2023-11-23T14:28:34Z"
+    }
+  },
+  "test_passed": true
+}

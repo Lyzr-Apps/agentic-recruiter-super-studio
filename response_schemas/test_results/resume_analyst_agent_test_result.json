@@ -1,0 +1,39 @@
+{
+  "agent_name": "Resume Analyst Agent",
+  "agent_id": "69859423e5d25ce3f598cb88",
+  "test_message": "Analyze this candidate for Senior Developer role: Name: Sarah Chen, Email: sarah.chen@email.com, Phone: +1-555-0123. Skills: Python, Django, React, AWS, 6 years experience. Education: BS Computer Science MIT. Previous: Lead Developer at Google (3 years), Senior Dev at Amazon (3 years). Job Requirements: 5+ years Python, team leadership, cloud experience.",
+  "expected_purpose": "Independent - Analyzes resumes and scores candidates",
+  "timestamp": "2026-02-06T07:14:43.879592",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "candidate_name": "Sarah Chen",
+      "email": "sarah.chen@email.com",
+      "phone": "+1-555-0123",
+      "skills_extracted": [
+        "Python",
+        "Django",
+        "React",
+        "AWS"
+      ],
+      "experience_years": 6,
+      "education": "BS Computer Science MIT",
+      "score": 88,
+      "category": "Schedule",
+      "reasoning": "Sarah has a strong alignment with the job requirements, showcasing over 6 years of experience with Python, leadership roles at top tech companies, and expertise in cloud services which matches well with AWS expertise. Her educational background from MIT further strengthens her profile.",
+      "breakdown": {
+        "skills_match": 36,
+        "experience_relevance": 27,
+        "education_alignment": 15,
+        "cultural_fit": 10
+      }
+    },
+    "metadata": {
+      "agent_name": "Resume Analyst Agent",
+      "timestamp": "2023-11-23T14:28:34Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"candidate_name\": \"Sarah Chen\",\n    \"email\": \"sarah.chen@email.com\",\n    \"phone\": \"+1-555-0123\",\n    \"skills_extracted\": [\"Python\", \"Django\", \"React\", \"AWS\"],\n    \"experience_years\": 6,\n    \"education\": \"BS Computer Science MIT\",\n    \"score\": 88,\n    \"category\": \"Schedule\",\n    \"reasoning\": \"Sarah has a strong alignment with the job requirements, showcasing over 6 years of experience with Python, leadership roles at top tech companies, and expertise in cloud services which matches well with AWS expertise. Her educational background from MIT further strengthens her profile.\",\n    \"breakdown\": {\n      \"skills_match\": 36,\n      \"experience_relevance\": 27,\n      \"education_alignment\": 15,\n      \"cultural_fit\": 10\n    }\n  },\n  \"metadata\": {\n    \"agent_name\": \"Resume Analyst Agent\",\n    \"timestamp\": \"2023-11-23T14:28:34Z\"\n  }\n}"
+}

@@ -1,0 +1,15 @@
+{
+  "agent_name": "Job Distribution Manager",
+  "agent_id": "6985940f1caa4e686dd66f3a",
+  "test_message": "Broadcast this job: Senior Software Engineer position at TechCorp. Requirements: 5+ years Python/React, leadership skills, remote-first. Salary: $120k-150k. Post to LinkedIn, Indeed, and Glassdoor.",
+  "expected_purpose": "Manager - Coordinates job posting workflow",
+  "timestamp": "2026-02-06T07:14:20.954717",
+  "is_valid_json": false,
+  "validation_errors": [
+    "Response is not valid JSON: Expecting value: line 1 column 1 (char 0)"
+  ],
+  "actual_response": {
+    "raw_text": "Agent stuck in recursion, aborting"
+  },
+  "raw_response": "Agent stuck in recursion, aborting"
+}

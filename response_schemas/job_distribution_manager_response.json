@@ -1,0 +1,77 @@
+{
+  "agent_name": "Job Distribution Manager",
+  "agent_id": "6985940f1caa4e686dd66f3a",
+  "agent_purpose": "Coordinates job optimization and multi-platform posting workflow",
+  "description": "Coordinates job content optimization and multi-platform distribution workflow, aggregates posting confirmations",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "workflow_status": "string",
+      "optimization_summary": {
+        "platforms_optimized": [
+          "string"
+        ],
+        "total_chars_saved": "number"
+      },
+      "posting_summary": {
+        "platforms_posted": [
+          "string"
+        ],
+        "total_successful": "number",
+        "job_urls": [
+          "string"
+        ]
+      },
+      "aggregated_confirmations": [
+        "string"
+      ]
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "workflow_status": "completed",
+      "optimization_summary": {
+        "platforms_optimized": [
+          "LinkedIn",
+          "Indeed",
+          "Glassdoor"
+        ],
+        "total_chars_saved": 350
+      },
+      "posting_summary": {
+        "platforms_posted": [
+          "LinkedIn",
+          "Indeed",
+          "Glassdoor"
+        ],
+        "total_successful": 3,
+        "job_urls": [
+          "https://www.linkedin.com/jobs/view/12345",
+          "https://www.indeed.com/job/45678",
+          "https://www.glassdoor.com/job/78901"
+        ]
+      },
+      "aggregated_confirmations": [
+        "LinkedIn: Job posted successfully.",
+        "Indeed: Job posted successfully.",
+        "Glassdoor: Job posted successfully."
+      ]
+    },
+    "metadata": {
+      "agent_name": "Job Distribution Manager",
+      "timestamp": "2023-10-05T14:48:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T07:14:20.955170",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "raw_text": "Agent stuck in recursion, aborting"
+  },
+  "test_passed": false
+}

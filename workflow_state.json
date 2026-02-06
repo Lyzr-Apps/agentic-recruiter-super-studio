@@ -1,72 +1,74 @@
 {
   "workflow_created": true,
   "agents": {
-    "daily_ops_coordinator": {
-      "agent_id": "6985879714456d4b2db732d8",
-      "name": "Daily Ops Coordinator",
+    "job_distribution_manager": {
+      "agent_id": "6985940f1caa4e686dd66f3a",
+      "name": "Job Distribution Manager",
       "type": "manager",
       "status": "active",
+      "provider": "OpenAI",
+      "model": "gpt-4o",
       "managed_agents": [
-        "698586eab90162af337b1e88",
-        "698586fdab4bf65a66ad0799",
-        "698587171caa4e686dd66dd8",
-        "6985873449f279d47448a5d2",
-        "6985874f1caa4e686dd66ddd",
-        "6985876ac613a65b3c4193f4"
+        "698593e61caa4e686dd66f39",
+        "698593fde5d25ce3f598cb87"
       ]
     },
-    "transport_intelligence_agent": {
-      "agent_id": "698586eab90162af337b1e88",
-      "name": "Transport Intelligence Agent",
-      "type": "sub_agent",
-      "status": "active",
-      "provider": "Perplexity",
-      "model": "sonar-pro"
-    },
-    "schedule_manager_agent": {
-      "agent_id": "698586fdab4bf65a66ad0799",
-      "name": "Schedule Manager Agent",
+    "platform_optimizer_agent": {
+      "agent_id": "698593e61caa4e686dd66f39",
+      "name": "Platform Optimizer Agent",
       "type": "sub_agent",
       "status": "active",
       "provider": "OpenAI",
-      "model": "gpt-4.1"
+      "model": "gpt-4o"
     },
-    "wellness_coordinator_agent": {
-      "agent_id": "698587171caa4e686dd66dd8",
-      "name": "Wellness Coordinator Agent",
+    "multi_channel_poster_agent": {
+      "agent_id": "698593fde5d25ce3f598cb87",
+      "name": "Multi-Channel Poster Agent",
       "type": "sub_agent",
       "status": "active",
       "provider": "OpenAI",
-      "model": "gpt-4.1"
+      "model": "gpt-4o"
     },
-    "preference_learning_agent": {
-      "agent_id": "6985873449f279d47448a5d2",
-      "name": "Preference Learning Agent",
-      "type": "sub_agent",
+    "resume_analyst_agent": {
+      "agent_id": "69859423e5d25ce3f598cb88",
+      "name": "Resume Analyst Agent",
+      "type": "independent",
       "status": "active",
       "provider": "OpenAI",
-      "model": "gpt-4.1"
+      "model": "gpt-4o"
     },
-    "safety_monitor_agent": {
-      "agent_id": "6985874f1caa4e686dd66ddd",
-      "name": "Safety Monitor Agent",
-      "type": "sub_agent",
-      "status": "active",
-      "provider": "Perplexity",
-      "model": "sonar-pro"
-    },
-    "social_planner_agent": {
-      "agent_id": "6985876ac613a65b3c4193f4",
-      "name": "Social Planner Agent",
-      "type": "sub_agent",
+    "candidate_engagement_agent": {
+      "agent_id": "69859439a791e6e318b8df62",
+      "name": "Candidate Engagement Agent",
+      "type": "independent",
       "status": "active",
       "provider": "OpenAI",
-      "model": "gpt-4.1"
+      "model": "gpt-4o",
+      "tools": ["gmail"]
+    },
+    "interview_scheduler_agent": {
+      "agent_id": "6985944de17e33c11eed1a7f",
+      "name": "Interview Scheduler Agent",
+      "type": "independent",
+      "status": "active",
+      "provider": "OpenAI",
+      "model": "gpt-4o",
+      "tools": ["googlecalendar"]
     }
   },
-  "total_agents": 7,
+  "total_agents": 6,
   "manager_agents": 1,
-  "sub_agents": 6,
+  "sub_agents": 2,
+  "independent_agents": 3,
   "created_at": "2026-02-06T00:00:00Z",
-  "workflow_pattern": "manager_subagent"
+  "workflow_pattern": "hybrid_manager_independent",
+  "pipelines": {
+    "pipeline_a_job_broadcasting": {
+      "manager": "6985940f1caa4e686dd66f3a",
+      "sub_agents": ["698593e61caa4e686dd66f39", "698593fde5d25ce3f598cb87"]
+    },
+    "pipeline_b_candidate_processing": {
+      "flow": ["69859423e5d25ce3f598cb88", "69859439a791e6e318b8df62", "6985944de17e33c11eed1a7f"]
+    }
+  }
 }

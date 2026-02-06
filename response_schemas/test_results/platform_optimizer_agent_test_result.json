@@ -1,0 +1,55 @@
+{
+  "agent_name": "Platform Optimizer Agent",
+  "agent_id": "698593e61caa4e686dd66f39",
+  "test_message": "Optimize this job for all platforms: Full Stack Developer needed. Skills: React, Node.js, AWS. 3+ years experience. Competitive salary and benefits.",
+  "expected_purpose": "Sub-agent - Optimizes job content for each platform",
+  "timestamp": "2026-02-06T07:14:37.945949",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "linkedin": {
+        "content": "We are seeking a skilled Full Stack Developer to join our dynamic team. In this role, you will leverage your expertise in React, Node.js, and AWS to develop innovative solutions. With over three years of experience, you'll be pivotal in driving our projects forward. We offer a competitive salary and excellent benefits, positioning you for both personal and professional growth within our company. #FullStackDeveloper #React #NodeJS #AWS #CareerOpportunity",
+        "char_count": 370,
+        "hashtags": [
+          "#FullStackDeveloper",
+          "#React",
+          "#NodeJS",
+          "#AWS",
+          "#CareerOpportunity"
+        ]
+      },
+      "indeed": {
+        "content": "Join our team as a Full Stack Developer! We are looking for a talented individual with a minimum of 3 years of experience in React, Node.js, and AWS. You'll be responsible for developing, testing, and implementing robust applications. Our company offers a competitive salary and comprehensive benefits, including healthcare and retirement plans. This is an excellent opportunity for a motivated developer to advance their career in a supportive and innovative environment. Apply today!",
+        "char_count": 468,
+        "keywords": [
+          "Full Stack Developer",
+          "React",
+          "Node.js",
+          "AWS",
+          "competitive salary",
+          "benefits",
+          "experience"
+        ]
+      },
+      "glassdoor": {
+        "content": "At our company, we foster a collaborative and innovative environment where our Full Stack Developers can thrive. We are looking for a developer skilled in React, Node.js, and AWS, with 3+ years of experience. You will be part of a team that values creativity and problem-solving. We offer competitive salaries and a comprehensive benefits package including medical, dental, and vision coverage, alongside modern workplace amenities and flexible working hours. Join us to grow your career in a place that values work-life balance and personal development.",
+        "char_count": 556,
+        "culture_points": [
+          "collaborative environment",
+          "innovation",
+          "creativity",
+          "problem-solving",
+          "work-life balance",
+          "personal development"
+        ]
+      }
+    },
+    "metadata": {
+      "agent_name": "Platform Optimizer Agent",
+      "timestamp": "2023-11-29T09:54:37Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"linkedin\": {\n      \"content\": \"We are seeking a skilled Full Stack Developer to join our dynamic team. In this role, you will leverage your expertise in React, Node.js, and AWS to develop innovative solutions. With over three years of experience, you'll be pivotal in driving our projects forward. We offer a competitive salary and excellent benefits, positioning you for both personal and professional growth within our company. #FullStackDeveloper #React #NodeJS #AWS #CareerOpportunity\",\n      \"char_count\": 370,\n      \"hashtags\": [\"#FullStackDeveloper\", \"#React\", \"#NodeJS\", \"#AWS\", \"#CareerOpportunity\"]\n    },\n    \"indeed\": {\n      \"content\": \"Join our team as a Full Stack Developer! We are looking for a talented individual with a minimum of 3 years of experience in React, Node.js, and AWS. You'll be responsible for developing, testing, and implementing robust applications. Our company offers a competitive salary and comprehensive benefits, including healthcare and retirement plans. This is an excellent opportunity for a motivated developer to advance their career in a supportive and innovative environment. Apply today!\",\n      \"char_count\": 468,\n      \"keywords\": [\"Full Stack Developer\", \"React\", \"Node.js\", \"AWS\", \"competitive salary\", \"benefits\", \"experience\"]\n    },\n    \"glassdoor\": {\n      \"content\": \"At our company, we foster a collaborative and innovative environment where our Full Stack Developers can thrive. We are looking for a developer skilled in React, Node.js, and AWS, with 3+ years of experience. You will be part of a team that values creativity and problem-solving. We offer competitive salaries and a comprehensive benefits package including medical, dental, and vision coverage, alongside modern workplace amenities and flexible working hours. Join us to grow your career in a place that values work-life balance and personal development.\",\n      \"char_count\": 556,\n      \"culture_points\": [\"collaborative environment\", \"innovation\", \"creativity\", \"problem-solving\", \"work-life balance\", \"personal development\"]\n    }\n  },\n  \"metadata\": {\n    \"agent_name\": \"Platform Optimizer Agent\",\n    \"timestamp\": \"2023-11-29T09:54:37Z\"\n  }\n}"
+}

@@ -7,116 +7,81 @@
       "nodeCategory": "input"
     },
     {
-      "id": "daily_ops_coordinator",
+      "id": "job_distribution_manager",
       "type": "Agent",
-      "label": "Daily Ops Coordinator",
+      "label": "Job Distribution Manager",
       "nodeCategory": "agent",
-      "agent_id": "6985879714456d4b2db732d8"
+      "agent_id": "6985940f1caa4e686dd66f3a"
     },
     {
-      "id": "transport_intelligence_agent",
+      "id": "platform_optimizer_agent",
       "type": "Agent",
-      "label": "Transport Intelligence Agent",
+      "label": "Platform Optimizer Agent",
       "nodeCategory": "agent",
-      "agent_id": "698586eab90162af337b1e88"
+      "agent_id": "698593e61caa4e686dd66f39"
     },
     {
-      "id": "schedule_manager_agent",
+      "id": "multi_channel_poster_agent",
       "type": "Agent",
-      "label": "Schedule Manager Agent",
+      "label": "Multi-Channel Poster Agent",
       "nodeCategory": "agent",
-      "agent_id": "698586fdab4bf65a66ad0799"
+      "agent_id": "698593fde5d25ce3f598cb87"
     },
     {
-      "id": "wellness_coordinator_agent",
+      "id": "resume_analyst_agent",
       "type": "Agent",
-      "label": "Wellness Coordinator Agent",
+      "label": "Resume Analyst Agent",
       "nodeCategory": "agent",
-      "agent_id": "698587171caa4e686dd66dd8"
+      "agent_id": "69859423e5d25ce3f598cb88"
     },
     {
-      "id": "preference_learning_agent",
+      "id": "candidate_engagement_agent",
       "type": "Agent",
-      "label": "Preference Learning Agent",
+      "label": "Candidate Engagement Agent",
       "nodeCategory": "agent",
-      "agent_id": "6985873449f279d47448a5d2"
+      "agent_id": "69859439a791e6e318b8df62"
     },
     {
-      "id": "safety_monitor_agent",
+      "id": "interview_scheduler_agent",
       "type": "Agent",
-      "label": "Safety Monitor Agent",
+      "label": "Interview Scheduler Agent",
       "nodeCategory": "agent",
-      "agent_id": "6985874f1caa4e686dd66ddd"
-    },
-    {
-      "id": "social_planner_agent",
-      "type": "Agent",
-      "label": "Social Planner Agent",
-      "nodeCategory": "agent",
-      "agent_id": "6985876ac613a65b3c4193f4"
+      "agent_id": "6985944de17e33c11eed1a7f"
     },
     {
       "id": "output_node",
       "type": "Output",
-      "label": "Unified Recommendation",
+      "label": "Final Output",
       "nodeCategory": "end"
     }
   ],
   "edges": [
     {
       "source": "input_node",
-      "target": "daily_ops_coordinator"
+      "target": "job_distribution_manager"
     },
     {
-      "source": "daily_ops_coordinator",
-      "target": "transport_intelligence_agent"
+      "source": "job_distribution_manager",
+      "target": "platform_optimizer_agent"
     },
     {
-      "source": "daily_ops_coordinator",
-      "target": "schedule_manager_agent"
+      "source": "job_distribution_manager",
+      "target": "multi_channel_poster_agent"
     },
     {
-      "source": "daily_ops_coordinator",
-      "target": "wellness_coordinator_agent"
+      "source": "resume_analyst_agent",
+      "target": "candidate_engagement_agent"
     },
     {
-      "source": "daily_ops_coordinator",
-      "target": "preference_learning_agent"
+      "source": "candidate_engagement_agent",
+      "target": "interview_scheduler_agent"
     },
     {
-      "source": "daily_ops_coordinator",
-      "target": "safety_monitor_agent"
+      "source": "job_distribution_manager",
+      "target": "output_node"
     },
     {
-      "source": "daily_ops_coordinator",
-      "target": "social_planner_agent"
-    },
-    {
-      "source": "transport_intelligence_agent",
-      "target": "daily_ops_coordinator"
-    },
-    {
-      "source": "schedule_manager_agent",
-      "target": "daily_ops_coordinator"
-    },
-    {
-      "source": "wellness_coordinator_agent",
-      "target": "daily_ops_coordinator"
-    },
-    {
-      "source": "preference_learning_agent",
-      "target": "daily_ops_coordinator"
-    },
-    {
-      "source": "safety_monitor_agent",
-      "target": "daily_ops_coordinator"
-    },
-    {
-      "source": "social_planner_agent",
-      "target": "daily_ops_coordinator"
-    },
-    {
-      "source": "daily_ops_coordinator",
+      "source": "interview_scheduler_agent",
       "target": "output_node"
     }
   ]

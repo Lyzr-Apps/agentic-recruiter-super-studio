@@ -1,0 +1,130 @@
+{
+  "agent_name": "Platform Optimizer Agent",
+  "agent_id": "698593e61caa4e686dd66f39",
+  "agent_purpose": "Optimizes job descriptions for LinkedIn, Indeed, and Glassdoor with platform-specific formatting",
+  "description": "Optimizes job description for each platform's format, SEO requirements, and character limits",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "linkedin": {
+        "content": "string",
+        "char_count": "number",
+        "hashtags": [
+          "string"
+        ]
+      },
+      "indeed": {
+        "content": "string",
+        "char_count": "number",
+        "keywords": [
+          "string"
+        ]
+      },
+      "glassdoor": {
+        "content": "string",
+        "char_count": "number",
+        "culture_points": [
+          "string"
+        ]
+      }
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "linkedin": {
+        "content": "We are seeking a skilled Full Stack Developer to join our dynamic team. In this role, you will leverage your expertise in React, Node.js, and AWS to develop innovative solutions. With over three years of experience, you'll be pivotal in driving our projects forward. We offer a competitive salary and excellent benefits, positioning you for both personal and professional growth within our company. #FullStackDeveloper #React #NodeJS #AWS #CareerOpportunity",
+        "char_count": 370,
+        "hashtags": [
+          "#FullStackDeveloper",
+          "#React",
+          "#NodeJS",
+          "#AWS",
+          "#CareerOpportunity"
+        ]
+      },
+      "indeed": {
+        "content": "Join our team as a Full Stack Developer! We are looking for a talented individual with a minimum of 3 years of experience in React, Node.js, and AWS. You'll be responsible for developing, testing, and implementing robust applications. Our company offers a competitive salary and comprehensive benefits, including healthcare and retirement plans. This is an excellent opportunity for a motivated developer to advance their career in a supportive and innovative environment. Apply today!",
+        "char_count": 468,
+        "keywords": [
+          "Full Stack Developer",
+          "React",
+          "Node.js",
+          "AWS",
+          "competitive salary",
+          "benefits",
+          "experience"
+        ]
+      },
+      "glassdoor": {
+        "content": "At our company, we foster a collaborative and innovative environment where our Full Stack Developers can thrive. We are looking for a developer skilled in React, Node.js, and AWS, with 3+ years of experience. You will be part of a team that values creativity and problem-solving. We offer competitive salaries and a comprehensive benefits package including medical, dental, and vision coverage, alongside modern workplace amenities and flexible working hours. Join us to grow your career in a place that values work-life balance and personal development.",
+        "char_count": 556,
+        "culture_points": [
+          "collaborative environment",
+          "innovation",
+          "creativity",
+          "problem-solving",
+          "work-life balance",
+          "personal development"
+        ]
+      }
+    },
+    "metadata": {
+      "agent_name": "Platform Optimizer Agent",
+      "timestamp": "2023-11-29T09:54:37Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T07:14:37.946579",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "linkedin": {
+        "content": "We are seeking a skilled Full Stack Developer to join our dynamic team. In this role, you will leverage your expertise in React, Node.js, and AWS to develop innovative solutions. With over three years of experience, you'll be pivotal in driving our projects forward. We offer a competitive salary and excellent benefits, positioning you for both personal and professional growth within our company. #FullStackDeveloper #React #NodeJS #AWS #CareerOpportunity",
+        "char_count": 370,
+        "hashtags": [
+          "#FullStackDeveloper",
+          "#React",
+          "#NodeJS",
+          "#AWS",
+          "#CareerOpportunity"
+        ]
+      },
+      "indeed": {
+        "content": "Join our team as a Full Stack Developer! We are looking for a talented individual with a minimum of 3 years of experience in React, Node.js, and AWS. You'll be responsible for developing, testing, and implementing robust applications. Our company offers a competitive salary and comprehensive benefits, including healthcare and retirement plans. This is an excellent opportunity for a motivated developer to advance their career in a supportive and innovative environment. Apply today!",
+        "char_count": 468,
+        "keywords": [
+          "Full Stack Developer",
+          "React",
+          "Node.js",
+          "AWS",
+          "competitive salary",
+          "benefits",
+          "experience"
+        ]
+      },
+      "glassdoor": {
+        "content": "At our company, we foster a collaborative and innovative environment where our Full Stack Developers can thrive. We are looking for a developer skilled in React, Node.js, and AWS, with 3+ years of experience. You will be part of a team that values creativity and problem-solving. We offer competitive salaries and a comprehensive benefits package including medical, dental, and vision coverage, alongside modern workplace amenities and flexible working hours. Join us to grow your career in a place that values work-life balance and personal development.",
+        "char_count": 556,
+        "culture_points": [
+          "collaborative environment",
+          "innovation",
+          "creativity",
+          "problem-solving",
+          "work-life balance",
+          "personal development"
+        ]
+      }
+    },
+    "metadata": {
+      "agent_name": "Platform Optimizer Agent",
+      "timestamp": "2023-11-29T09:54:37Z"
+    }
+  },
+  "test_passed": true
+}

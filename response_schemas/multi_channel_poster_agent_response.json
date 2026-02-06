@@ -1,0 +1,100 @@
+{
+  "agent_name": "Multi-Channel Poster Agent",
+  "agent_id": "698593fde5d25ce3f598cb87",
+  "agent_purpose": "Posts optimized job content to LinkedIn, Indeed, and Glassdoor platforms",
+  "description": "Executes API calls to post optimized job content to LinkedIn, Indeed, and Glassdoor",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "postings": [
+        {
+          "platform": "string",
+          "status": "string",
+          "job_id": "string",
+          "url": "string",
+          "timestamp": "string"
+        }
+      ],
+      "total_posted": "number",
+      "failed": [
+        "any"
+      ]
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "postings": [
+        {
+          "platform": "LinkedIn",
+          "status": "Posted",
+          "job_id": "LNK123456",
+          "url": "linkedin.com/jobs/LNK123456",
+          "timestamp": "2023-11-30T14:15:00Z"
+        },
+        {
+          "platform": "Indeed",
+          "status": "Posted",
+          "job_id": "IND789012",
+          "url": "indeed.com/jobs/IND789012",
+          "timestamp": "2023-11-30T14:16:00Z"
+        },
+        {
+          "platform": "Glassdoor",
+          "status": "Posted",
+          "job_id": "GLS345678",
+          "url": "glassdoor.com/jobs/GLS345678",
+          "timestamp": "2023-11-30T14:17:00Z"
+        }
+      ],
+      "total_posted": 3,
+      "failed": []
+    },
+    "metadata": {
+      "agent_name": "Multi-Channel Poster Agent",
+      "timestamp": "2023-11-30T14:17:30Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T07:14:40.341414",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "postings": [
+        {
+          "platform": "LinkedIn",
+          "status": "Posted",
+          "job_id": "LNK123456",
+          "url": "linkedin.com/jobs/LNK123456",
+          "timestamp": "2023-11-30T14:15:00Z"
+        },
+        {
+          "platform": "Indeed",
+          "status": "Posted",
+          "job_id": "IND789012",
+          "url": "indeed.com/jobs/IND789012",
+          "timestamp": "2023-11-30T14:16:00Z"
+        },
+        {
+          "platform": "Glassdoor",
+          "status": "Posted",
+          "job_id": "GLS345678",
+          "url": "glassdoor.com/jobs/GLS345678",
+          "timestamp": "2023-11-30T14:17:00Z"
+        }
+      ],
+      "total_posted": 3,
+      "failed": []
+    },
+    "metadata": {
+      "agent_name": "Multi-Channel Poster Agent",
+      "timestamp": "2023-11-30T14:17:30Z"
+    }
+  },
+  "test_passed": true
+}
