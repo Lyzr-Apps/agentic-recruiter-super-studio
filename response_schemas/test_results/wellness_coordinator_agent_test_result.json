@@ -1,0 +1,71 @@
+{
+  "agent_name": "Wellness Coordinator Agent",
+  "agent_id": "698587171caa4e686dd66dd8",
+  "test_message": "I have a 2-hour commute followed by 3 hours of back-to-back lectures. What wellness reminders should I get?",
+  "expected_purpose": "Context-aware wellness reminders",
+  "timestamp": "2026-02-06T06:20:16.980970",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "hydration_reminders": [
+        {
+          "time": "2024-06-21T08:00:00+05:30",
+          "reason": "Start of commute; hydrate before long travel.",
+          "urgency": "medium"
+        },
+        {
+          "time": "2024-06-21T09:00:00+05:30",
+          "reason": "Midway through commute; reduce dehydration due to travel.",
+          "urgency": "medium"
+        },
+        {
+          "time": "2024-06-21T10:30:00+05:30",
+          "reason": "Lecture session start; ensure hydration for optimal focus.",
+          "urgency": "medium"
+        },
+        {
+          "time": "2024-06-21T12:00:00+05:30",
+          "reason": "Midway through lectures; prevent fatigue and maintain alertness.",
+          "urgency": "high"
+        }
+      ],
+      "meal_suggestions": [
+        {
+          "meal_type": "breakfast",
+          "suggested_time": "2024-06-21T07:30:00+05:30",
+          "duration_available_minutes": 20,
+          "location_suggestions": [
+            "Home",
+            "Nearby caf\u00e9 en route"
+          ]
+        },
+        {
+          "meal_type": "snack",
+          "suggested_time": "2024-06-21T13:30:00+05:30",
+          "duration_available_minutes": 15,
+          "location_suggestions": [
+            "College canteen",
+            "Quick nearby snack stall"
+          ]
+        }
+      ],
+      "rest_recommendations": [
+        {
+          "time_slot": "2024-06-21T13:00:00+05:30",
+          "duration_minutes": 10,
+          "reason": "Short recharge break after intensive lecture block."
+        }
+      ],
+      "emergency_alerts": [],
+      "wellness_score": 68,
+      "confidence_score": 0.93
+    },
+    "metadata": {
+      "agent_name": "Wellness Coordinator Agent",
+      "timestamp": "2024-06-21T06:30:00+05:30"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"hydration_reminders\": [\n      {\n        \"time\": \"2024-06-21T08:00:00+05:30\",\n        \"reason\": \"Start of commute; hydrate before long travel.\",\n        \"urgency\": \"medium\"\n      },\n      {\n        \"time\": \"2024-06-21T09:00:00+05:30\",\n        \"reason\": \"Midway through commute; reduce dehydration due to travel.\",\n        \"urgency\": \"medium\"\n      },\n      {\n        \"time\": \"2024-06-21T10:30:00+05:30\",\n        \"reason\": \"Lecture session start; ensure hydration for optimal focus.\",\n        \"urgency\": \"medium\"\n      },\n      {\n        \"time\": \"2024-06-21T12:00:00+05:30\",\n        \"reason\": \"Midway through lectures; prevent fatigue and maintain alertness.\",\n        \"urgency\": \"high\"\n      }\n    ],\n    \"meal_suggestions\": [\n      {\n        \"meal_type\": \"breakfast\",\n        \"suggested_time\": \"2024-06-21T07:30:00+05:30\",\n        \"duration_available_minutes\": 20,\n        \"location_suggestions\": [\n          \"Home\",\n          \"Nearby caf\u00e9 en route\"\n        ]\n      },\n      {\n        \"meal_type\": \"snack\",\n        \"suggested_time\": \"2024-06-21T13:30:00+05:30\",\n        \"duration_available_minutes\": 15,\n        \"location_suggestions\": [\n          \"College canteen\",\n          \"Quick nearby snack stall\"\n        ]\n      }\n    ],\n    \"rest_recommendations\": [\n      {\n        \"time_slot\": \"2024-06-21T13:00:00+05:30\",\n        \"duration_minutes\": 10,\n        \"reason\": \"Short recharge break after intensive lecture block.\"\n      }\n    ],\n    \"emergency_alerts\": [],\n    \"wellness_score\": 68,\n    \"confidence_score\": 0.93\n  },\n  \"metadata\": {\n    \"agent_name\": \"Wellness Coordinator Agent\",\n    \"timestamp\": \"2024-06-21T06:30:00+05:30\"\n  }\n}"
+}

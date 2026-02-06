@@ -1,0 +1,101 @@
+{
+  "agent_name": "Daily Ops Coordinator",
+  "agent_id": "6985879714456d4b2db732d8",
+  "test_message": "I have a 9 AM lecture at Churchgate. What should I do now? I'm currently at Andheri.",
+  "expected_purpose": "Master coordinator synthesizing multi-domain inputs",
+  "timestamp": "2026-02-06T06:21:39.104285",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "unified_recommendation": {
+        "summary": "Start your morning prep now, meet at Andheri Station main entrance by 8:35-8:40 AM for a group train to Churchgate, stay hydrated/snack, keep valuables secure, and board an 8:50 AM fast local train to arrive before your 9 AM lecture.",
+        "primary_action": "Begin prepping for departure (hydration, snack), head to Andheri Station, coordinate with friends, and take the 8:50 AM Western Line local train to Churchgate.",
+        "reasoning": "This plan meets your punctuality preference, groups social and safety advantages, time-optimizes via local train, and builds in buffers for prep, ticketing, and on-time lecture arrival.",
+        "confidence_level": "high"
+      },
+      "transport_plan": {
+        "recommended_route": "Andheri to Churchgate via fast Mumbai Western Line local train, target 8:50 AM departure.",
+        "mode": "local train",
+        "departure_time": "2024-06-13T08:50:00+05:30",
+        "eta": "2024-06-13T09:30:00+05:30",
+        "cost": 10,
+        "safety_level": "moderate",
+        "alternatives": [
+          "Ola/Uber direct cab (higher cost, safer, less crowd)",
+          "Metro + auto (less crowd, slower)",
+          "BEST bus (cheapest, slowest)"
+        ]
+      },
+      "schedule_overview": {
+        "next_events": [
+          "9:00 AM lecture at Churchgate"
+        ],
+        "conflicts_resolved": [
+          "Prep time and commute buffered to avoid delays."
+        ],
+        "buffer_status": "adequate"
+      },
+      "wellness_alerts": {
+        "immediate_actions": [
+          "Drink water before leaving home.",
+          "Pack a light snack (fruit/nuts)."
+        ],
+        "scheduled_reminders": [
+          "Hydration reminder at 8:30 AM during commute.",
+          "Relax for 10 mins after arrival at Churchgate before lecture starts."
+        ],
+        "wellness_score": 76
+      },
+      "safety_notes": {
+        "overall_safety": "moderate",
+        "key_precautions": [
+          "Keep valuables secure at station and on train.",
+          "Remain aware in crowded areas.",
+          "Use official apps/check train times."
+        ],
+        "emergency_contacts_ready": true
+      },
+      "social_opportunities": {
+        "group_travel_available": true,
+        "meeting_points": [
+          "Andheri Station main entrance (Western Line)"
+        ],
+        "coordination_notes": "Meet your group by 8:40 AM, board same train for a smoother and safer journey; grab chai/snack together before departing."
+      },
+      "conflicts_and_tradeoffs": [
+        {
+          "conflict_type": "Speed vs. Safety",
+          "options": [
+            "Take fast local train (faster, more crowded, some pickpocket risk)",
+            "Uber/cab (slower, less risk, high cost)"
+          ],
+          "chosen_option": "Fast local train with group for moderate safety and cost balance.",
+          "rationale": "Morning hours are relatively safe, group mitigates risks, and optimizes time/budget as per your usual choices."
+        }
+      ],
+      "user_preferences_applied": [
+        "Preferred local train for peak commute.",
+        "Preps allow 25+ min buffer.",
+        "Moderate punctuality (arrive 10-20 mins early).",
+        "Hydration/meal reminders set.",
+        "Group social travel coordination included."
+      ],
+      "overall_confidence_score": 0.91
+    },
+    "metadata": {
+      "agent_name": "Daily Ops Coordinator",
+      "timestamp": "2024-06-13T07:20:00+05:30",
+      "sub_agents_consulted": [
+        "Transport Intelligence Agent",
+        "Schedule Manager Agent",
+        "Wellness Coordinator Agent",
+        "Preference Learning Agent",
+        "Safety Monitor Agent",
+        "Social Planner Agent"
+      ]
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"unified_recommendation\": {\n      \"summary\": \"Start your morning prep now, meet at Andheri Station main entrance by 8:35-8:40 AM for a group train to Churchgate, stay hydrated/snack, keep valuables secure, and board an 8:50 AM fast local train to arrive before your 9 AM lecture.\",\n      \"primary_action\": \"Begin prepping for departure (hydration, snack), head to Andheri Station, coordinate with friends, and take the 8:50 AM Western Line local train to Churchgate.\",\n      \"reasoning\": \"This plan meets your punctuality preference, groups social and safety advantages, time-optimizes via local train, and builds in buffers for prep, ticketing, and on-time lecture arrival.\",\n      \"confidence_level\": \"high\"\n    },\n    \"transport_plan\": {\n      \"recommended_route\": \"Andheri to Churchgate via fast Mumbai Western Line local train, target 8:50 AM departure.\",\n      \"mode\": \"local train\",\n      \"departure_time\": \"2024-06-13T08:50:00+05:30\",\n      \"eta\": \"2024-06-13T09:30:00+05:30\",\n      \"cost\": 10,\n      \"safety_level\": \"moderate\",\n      \"alternatives\": [\n        \"Ola/Uber direct cab (higher cost, safer, less crowd)\",\n        \"Metro + auto (less crowd, slower)\",\n        \"BEST bus (cheapest, slowest)\"\n      ]\n    },\n    \"schedule_overview\": {\n      \"next_events\": [\"9:00 AM lecture at Churchgate\"],\n      \"conflicts_resolved\": [\"Prep time and commute buffered to avoid delays.\"],\n      \"buffer_status\": \"adequate\"\n    },\n    \"wellness_alerts\": {\n      \"immediate_actions\": [\"Drink water before leaving home.\", \"Pack a light snack (fruit/nuts).\"],\n      \"scheduled_reminders\": [\"Hydration reminder at 8:30 AM during commute.\", \"Relax for 10 mins after arrival at Churchgate before lecture starts.\"],\n      \"wellness_score\": 76\n    },\n    \"safety_notes\": {\n      \"overall_safety\": \"moderate\",\n      \"key_precautions\": [\n        \"Keep valuables secure at station and on train.\",\n        \"Remain aware in crowded areas.\",\n        \"Use official apps/check train times.\"\n      ],\n      \"emergency_contacts_ready\": true\n    },\n    \"social_opportunities\": {\n      \"group_travel_available\": true,\n      \"meeting_points\": [\"Andheri Station main entrance (Western Line)\"],\n      \"coordination_notes\": \"Meet your group by 8:40 AM, board same train for a smoother and safer journey; grab chai/snack together before departing.\"\n    },\n    \"conflicts_and_tradeoffs\": [\n      {\n        \"conflict_type\": \"Speed vs. Safety\",\n        \"options\": [\n          \"Take fast local train (faster, more crowded, some pickpocket risk)\",\n          \"Uber/cab (slower, less risk, high cost)\"\n        ],\n        \"chosen_option\": \"Fast local train with group for moderate safety and cost balance.\",\n        \"rationale\": \"Morning hours are relatively safe, group mitigates risks, and optimizes time/budget as per your usual choices.\"\n      }\n    ],\n    \"user_preferences_applied\": [\n      \"Preferred local train for peak commute.\",\n      \"Preps allow 25+ min buffer.\",\n      \"Moderate punctuality (arrive 10-20 mins early).\",\n      \"Hydration/meal reminders set.\",\n      \"Group social travel coordination included.\"\n    ],\n    \"overall_confidence_score\": 0.91\n  },\n  \"metadata\": {\n    \"agent_name\": \"Daily Ops Coordinator\",\n    \"timestamp\": \"2024-06-13T07:20:00+05:30\",\n    \"sub_agents_consulted\": [\n      \"Transport Intelligence Agent\",\n      \"Schedule Manager Agent\",\n      \"Wellness Coordinator Agent\",\n      \"Preference Learning Agent\",\n      \"Safety Monitor Agent\",\n      \"Social Planner Agent\"\n    ]\n  }\n}"
+}

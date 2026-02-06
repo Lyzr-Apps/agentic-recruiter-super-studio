@@ -1,0 +1,123 @@
+{
+  "nodes": [
+    {
+      "id": "input_node",
+      "type": "Input",
+      "label": "User Request",
+      "nodeCategory": "input"
+    },
+    {
+      "id": "daily_ops_coordinator",
+      "type": "Agent",
+      "label": "Daily Ops Coordinator",
+      "nodeCategory": "agent",
+      "agent_id": "6985879714456d4b2db732d8"
+    },
+    {
+      "id": "transport_intelligence_agent",
+      "type": "Agent",
+      "label": "Transport Intelligence Agent",
+      "nodeCategory": "agent",
+      "agent_id": "698586eab90162af337b1e88"
+    },
+    {
+      "id": "schedule_manager_agent",
+      "type": "Agent",
+      "label": "Schedule Manager Agent",
+      "nodeCategory": "agent",
+      "agent_id": "698586fdab4bf65a66ad0799"
+    },
+    {
+      "id": "wellness_coordinator_agent",
+      "type": "Agent",
+      "label": "Wellness Coordinator Agent",
+      "nodeCategory": "agent",
+      "agent_id": "698587171caa4e686dd66dd8"
+    },
+    {
+      "id": "preference_learning_agent",
+      "type": "Agent",
+      "label": "Preference Learning Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6985873449f279d47448a5d2"
+    },
+    {
+      "id": "safety_monitor_agent",
+      "type": "Agent",
+      "label": "Safety Monitor Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6985874f1caa4e686dd66ddd"
+    },
+    {
+      "id": "social_planner_agent",
+      "type": "Agent",
+      "label": "Social Planner Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6985876ac613a65b3c4193f4"
+    },
+    {
+      "id": "output_node",
+      "type": "Output",
+      "label": "Unified Recommendation",
+      "nodeCategory": "end"
+    }
+  ],
+  "edges": [
+    {
+      "source": "input_node",
+      "target": "daily_ops_coordinator"
+    },
+    {
+      "source": "daily_ops_coordinator",
+      "target": "transport_intelligence_agent"
+    },
+    {
+      "source": "daily_ops_coordinator",
+      "target": "schedule_manager_agent"
+    },
+    {
+      "source": "daily_ops_coordinator",
+      "target": "wellness_coordinator_agent"
+    },
+    {
+      "source": "daily_ops_coordinator",
+      "target": "preference_learning_agent"
+    },
+    {
+      "source": "daily_ops_coordinator",
+      "target": "safety_monitor_agent"
+    },
+    {
+      "source": "daily_ops_coordinator",
+      "target": "social_planner_agent"
+    },
+    {
+      "source": "transport_intelligence_agent",
+      "target": "daily_ops_coordinator"
+    },
+    {
+      "source": "schedule_manager_agent",
+      "target": "daily_ops_coordinator"
+    },
+    {
+      "source": "wellness_coordinator_agent",
+      "target": "daily_ops_coordinator"
+    },
+    {
+      "source": "preference_learning_agent",
+      "target": "daily_ops_coordinator"
+    },
+    {
+      "source": "safety_monitor_agent",
+      "target": "daily_ops_coordinator"
+    },
+    {
+      "source": "social_planner_agent",
+      "target": "daily_ops_coordinator"
+    },
+    {
+      "source": "daily_ops_coordinator",
+      "target": "output_node"
+    }
+  ]
+}

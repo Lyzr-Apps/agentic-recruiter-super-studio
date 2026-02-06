@@ -1,0 +1,109 @@
+{
+  "agent_name": "Safety Monitor Agent",
+  "agent_id": "6985874f1caa4e686dd66ddd",
+  "test_message": "Evaluate safety of returning from Churchgate to Andheri at 10 PM via local train.",
+  "expected_purpose": "Route safety evaluation",
+  "timestamp": "2026-02-06T06:20:39.936156",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "safety_assessment": {
+        "overall_safety_level": "moderate",
+        "risk_factors": [
+          "High crowd levels during peak hours",
+          "Limited visibility in some areas around the station",
+          "Less foot traffic late at night"
+        ],
+        "safety_score": 65
+      },
+      "route_segments": [
+        {
+          "segment_name": "Churchgate Station to Mumbai Local Train",
+          "safety_level": "moderate",
+          "concerns": [
+            "High crowd levels during earlier hours before 10 PM",
+            "Limited security personnel present late at night"
+          ],
+          "time_specific_risks": {
+            "early_morning": "safe",
+            "late_night": "risky"
+          }
+        },
+        {
+          "segment_name": "Local Train Journey to Andheri",
+          "safety_level": "moderate",
+          "concerns": [
+            "Arguments and altercations might happen due to overcrowding",
+            "Possible delays leading to longer travel time"
+          ],
+          "time_specific_risks": {
+            "early_morning": "safe",
+            "late_night": "risky"
+          }
+        },
+        {
+          "segment_name": "Andheri Station to Final Destination",
+          "safety_level": "safe",
+          "concerns": [
+            "Well-lit areas around the station",
+            "Higher presence of police personnel"
+          ],
+          "time_specific_risks": {
+            "early_morning": "safe",
+            "late_night": "safe"
+          }
+        }
+      ],
+      "safer_alternatives": [
+        {
+          "route_description": "Taking a taxi or rideshare from Churchgate to Andheri instead of the local train",
+          "safety_improvements": [
+            "Direct transport without uncertainties of crowd",
+            "Enhanced security during the trip"
+          ],
+          "tradeoffs": "Higher cost compared to local train; potential traffic delays",
+          "recommended_for_times": [
+            "late_night"
+          ]
+        }
+      ],
+      "safety_tips": [
+        {
+          "tip": "Stay alert and avoid distractions (like your phone) when traveling late at night.",
+          "applicable_to": "returning late at night",
+          "priority": "high"
+        },
+        {
+          "tip": "Travel in groups if possible, especially when using public transport.",
+          "applicable_to": "night travel",
+          "priority": "medium"
+        },
+        {
+          "tip": "Share your journey details with a friend or family member.",
+          "applicable_to": "all travel times",
+          "priority": "high"
+        }
+      ],
+      "emergency_contacts": [
+        {
+          "contact_type": "police",
+          "number": "100",
+          "when_to_use": "In case of any emergencies or suspicious activities"
+        },
+        {
+          "contact_type": "helpline",
+          "number": "1860 266 2345",
+          "when_to_use": "If you need assistance during your journey"
+        }
+      ],
+      "confidence_score": 0.85
+    },
+    "metadata": {
+      "agent_name": "Safety Monitor Agent",
+      "timestamp": "2023-10-10T12:00:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"safety_assessment\": {\n      \"overall_safety_level\": \"moderate\",\n      \"risk_factors\": [\n        \"High crowd levels during peak hours\",\n        \"Limited visibility in some areas around the station\",\n        \"Less foot traffic late at night\"\n      ],\n      \"safety_score\": 65\n    },\n    \"route_segments\": [\n      {\n        \"segment_name\": \"Churchgate Station to Mumbai Local Train\",\n        \"safety_level\": \"moderate\",\n        \"concerns\": [\n          \"High crowd levels during earlier hours before 10 PM\",\n          \"Limited security personnel present late at night\"\n        ],\n        \"time_specific_risks\": {\n          \"early_morning\": \"safe\",\n          \"late_night\": \"risky\"\n        }\n      },\n      {\n        \"segment_name\": \"Local Train Journey to Andheri\",\n        \"safety_level\": \"moderate\",\n        \"concerns\": [\n          \"Arguments and altercations might happen due to overcrowding\",\n          \"Possible delays leading to longer travel time\"\n        ],\n        \"time_specific_risks\": {\n          \"early_morning\": \"safe\",\n          \"late_night\": \"risky\"\n        }\n      },\n      {\n        \"segment_name\": \"Andheri Station to Final Destination\",\n        \"safety_level\": \"safe\",\n        \"concerns\": [\n          \"Well-lit areas around the station\",\n          \"Higher presence of police personnel\"\n        ],\n        \"time_specific_risks\": {\n          \"early_morning\": \"safe\",\n          \"late_night\": \"safe\"\n        }\n      }\n    ],\n    \"safer_alternatives\": [\n      {\n        \"route_description\": \"Taking a taxi or rideshare from Churchgate to Andheri instead of the local train\",\n        \"safety_improvements\": [\n          \"Direct transport without uncertainties of crowd\",\n          \"Enhanced security during the trip\"\n        ],\n        \"tradeoffs\": \"Higher cost compared to local train; potential traffic delays\",\n        \"recommended_for_times\": [\"late_night\"]\n      }\n    ],\n    \"safety_tips\": [\n      {\n        \"tip\": \"Stay alert and avoid distractions (like your phone) when traveling late at night.\",\n        \"applicable_to\": \"returning late at night\",\n        \"priority\": \"high\"\n      },\n      {\n        \"tip\": \"Travel in groups if possible, especially when using public transport.\",\n        \"applicable_to\": \"night travel\",\n        \"priority\": \"medium\"\n      },\n      {\n        \"tip\": \"Share your journey details with a friend or family member.\",\n        \"applicable_to\": \"all travel times\",\n        \"priority\": \"high\"\n      }\n    ],\n    \"emergency_contacts\": [\n      {\n        \"contact_type\": \"police\",\n        \"number\": \"100\",\n        \"when_to_use\": \"In case of any emergencies or suspicious activities\"\n      },\n      {\n        \"contact_type\": \"helpline\",\n        \"number\": \"1860 266 2345\",\n        \"when_to_use\": \"If you need assistance during your journey\"\n      }\n    ],\n    \"confidence_score\": 0.85\n  },\n  \"metadata\": {\n    \"agent_name\": \"Safety Monitor Agent\",\n    \"timestamp\": \"2023-10-10T12:00:00Z\"\n  }\n}"
+}

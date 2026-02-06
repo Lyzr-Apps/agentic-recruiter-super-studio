@@ -1,0 +1,186 @@
+{
+  "agent_name": "Schedule Manager Agent",
+  "agent_id": "698586fdab4bf65a66ad0799",
+  "agent_purpose": "schedule_management",
+  "description": "Manages academic and personal schedules, identifies conflicts, calculates departure times, and suggests optimal time allocation",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "upcoming_events": [
+        {
+          "event_name": "string",
+          "start_time": "string",
+          "end_time": "string",
+          "location": "string",
+          "priority": "string"
+        }
+      ],
+      "conflicts": [
+        {
+          "conflict_type": "string",
+          "events": [
+            "string"
+          ],
+          "suggestion": "string"
+        }
+      ],
+      "departure_times": [
+        {
+          "for_event": "string",
+          "recommended_departure": "string",
+          "buffer_minutes": "number"
+        }
+      ],
+      "free_slots": [
+        {
+          "start_time": "string",
+          "duration_minutes": "number",
+          "suggestion": "string"
+        }
+      ],
+      "confidence_score": "number"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "upcoming_events": [
+        {
+          "event_name": "Lecture 1",
+          "start_time": "2024-06-28T09:00:00+05:30",
+          "end_time": "2024-06-28T11:00:00+05:30",
+          "location": "Churchgate",
+          "priority": "high"
+        },
+        {
+          "event_name": "Lecture 2",
+          "start_time": "2024-06-28T14:00:00+05:30",
+          "end_time": "2024-06-28T16:00:00+05:30",
+          "location": "Churchgate",
+          "priority": "high"
+        },
+        {
+          "event_name": "Internship Meeting",
+          "start_time": "2024-06-28T17:00:00+05:30",
+          "end_time": "2024-06-28T18:00:00+05:30",
+          "location": "BKC",
+          "priority": "high"
+        }
+      ],
+      "conflicts": [
+        {
+          "conflict_type": "tight_connection",
+          "events": [
+            "Lecture 2",
+            "Internship Meeting"
+          ],
+          "suggestion": "There is just 1 hour between the end of Lecture 2 at Churchgate (4 PM) and the internship meeting at BKC (5 PM). Mumbai traffic between Churchgate and BKC can take 40-60 minutes during peak hours. Consider leaving class slightly early or informing your internship supervisor about possible delay."
+        }
+      ],
+      "departure_times": [
+        {
+          "for_event": "Lecture 1",
+          "recommended_departure": "2024-06-28T08:30:00+05:30",
+          "buffer_minutes": 30
+        },
+        {
+          "for_event": "Lecture 2",
+          "recommended_departure": "2024-06-28T13:30:00+05:30",
+          "buffer_minutes": 30
+        },
+        {
+          "for_event": "Internship Meeting",
+          "recommended_departure": "2024-06-28T16:00:00+05:30",
+          "buffer_minutes": 60
+        }
+      ],
+      "free_slots": [
+        {
+          "start_time": "2024-06-28T11:00:00+05:30",
+          "duration_minutes": 180,
+          "suggestion": "meal|study"
+        }
+      ],
+      "confidence_score": 0.95
+    },
+    "metadata": {
+      "agent_name": "Schedule Manager Agent",
+      "timestamp": "2024-06-28T08:00:00+05:30"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:20:07.832191",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "upcoming_events": [
+        {
+          "event_name": "Lecture 1",
+          "start_time": "2024-06-28T09:00:00+05:30",
+          "end_time": "2024-06-28T11:00:00+05:30",
+          "location": "Churchgate",
+          "priority": "high"
+        },
+        {
+          "event_name": "Lecture 2",
+          "start_time": "2024-06-28T14:00:00+05:30",
+          "end_time": "2024-06-28T16:00:00+05:30",
+          "location": "Churchgate",
+          "priority": "high"
+        },
+        {
+          "event_name": "Internship Meeting",
+          "start_time": "2024-06-28T17:00:00+05:30",
+          "end_time": "2024-06-28T18:00:00+05:30",
+          "location": "BKC",
+          "priority": "high"
+        }
+      ],
+      "conflicts": [
+        {
+          "conflict_type": "tight_connection",
+          "events": [
+            "Lecture 2",
+            "Internship Meeting"
+          ],
+          "suggestion": "There is just 1 hour between the end of Lecture 2 at Churchgate (4 PM) and the internship meeting at BKC (5 PM). Mumbai traffic between Churchgate and BKC can take 40-60 minutes during peak hours. Consider leaving class slightly early or informing your internship supervisor about possible delay."
+        }
+      ],
+      "departure_times": [
+        {
+          "for_event": "Lecture 1",
+          "recommended_departure": "2024-06-28T08:30:00+05:30",
+          "buffer_minutes": 30
+        },
+        {
+          "for_event": "Lecture 2",
+          "recommended_departure": "2024-06-28T13:30:00+05:30",
+          "buffer_minutes": 30
+        },
+        {
+          "for_event": "Internship Meeting",
+          "recommended_departure": "2024-06-28T16:00:00+05:30",
+          "buffer_minutes": 60
+        }
+      ],
+      "free_slots": [
+        {
+          "start_time": "2024-06-28T11:00:00+05:30",
+          "duration_minutes": 180,
+          "suggestion": "meal|study"
+        }
+      ],
+      "confidence_score": 0.95
+    },
+    "metadata": {
+      "agent_name": "Schedule Manager Agent",
+      "timestamp": "2024-06-28T08:00:00+05:30"
+    }
+  },
+  "test_passed": true
+}

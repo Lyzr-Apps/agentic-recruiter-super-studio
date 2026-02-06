@@ -1,0 +1,158 @@
+{
+  "agent_name": "Preference Learning Agent",
+  "agent_id": "6985873449f279d47448a5d2",
+  "agent_purpose": "preference_learning",
+  "description": "Tracks and learns from user behavior patterns to personalize transport, schedule, and wellness recommendations",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "learned_preferences": {
+        "transport_mode_preference": {
+          "preferred_modes": [
+            "string"
+          ],
+          "context_factors": [
+            "string"
+          ],
+          "confidence": "number"
+        },
+        "timing_buffer_preference": {
+          "average_buffer_minutes": "number",
+          "tendency": "string",
+          "confidence": "number"
+        },
+        "route_optimization_preference": {
+          "priority": "string",
+          "confidence": "number"
+        },
+        "wellness_response_rate": {
+          "hydration_compliance": "number",
+          "meal_adherence": "number",
+          "rest_compliance": "number"
+        }
+      },
+      "recent_patterns": [
+        {
+          "pattern_type": "string",
+          "description": "string",
+          "frequency": "number",
+          "last_observed": "string"
+        }
+      ],
+      "recommendations_for_other_agents": {
+        "transport_agent": "string",
+        "schedule_agent": "string",
+        "wellness_agent": "string"
+      },
+      "confidence_score": "number"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "learned_preferences": {
+        "transport_mode_preference": {
+          "preferred_modes": [
+            "Western line"
+          ],
+          "context_factors": [
+            "route_availability",
+            "habit",
+            "perceived reliability"
+          ],
+          "confidence": 0.85
+        },
+        "timing_buffer_preference": {
+          "average_buffer_minutes": 10,
+          "tendency": "moderate",
+          "confidence": 0.6
+        },
+        "route_optimization_preference": {
+          "priority": "habit",
+          "confidence": 0.9
+        },
+        "wellness_response_rate": {
+          "hydration_compliance": 0.5,
+          "meal_adherence": 0.5,
+          "rest_compliance": 0.5
+        }
+      },
+      "recent_patterns": [
+        {
+          "pattern_type": "route selection",
+          "description": "User consistently chooses Western line even when Harbour line presents an equivalent or equally optimal route.",
+          "frequency": 8,
+          "last_observed": "2024-06-08T12:00:00+05:30"
+        }
+      ],
+      "recommendations_for_other_agents": {
+        "transport_agent": "Prioritize Western line options when presenting travel routes, even when other lines offer similar efficiency.",
+        "schedule_agent": "Assume consistent travel durations based on Western line schedules.",
+        "wellness_agent": "No direct route implication; continue monitoring for stress or rest issues during commutes."
+      },
+      "confidence_score": 0.83
+    },
+    "metadata": {
+      "agent_name": "Preference Learning Agent",
+      "timestamp": "2024-06-08T12:10:00+05:30"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:20:24.915650",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "learned_preferences": {
+        "transport_mode_preference": {
+          "preferred_modes": [
+            "Western line"
+          ],
+          "context_factors": [
+            "route_availability",
+            "habit",
+            "perceived reliability"
+          ],
+          "confidence": 0.85
+        },
+        "timing_buffer_preference": {
+          "average_buffer_minutes": 10,
+          "tendency": "moderate",
+          "confidence": 0.6
+        },
+        "route_optimization_preference": {
+          "priority": "habit",
+          "confidence": 0.9
+        },
+        "wellness_response_rate": {
+          "hydration_compliance": 0.5,
+          "meal_adherence": 0.5,
+          "rest_compliance": 0.5
+        }
+      },
+      "recent_patterns": [
+        {
+          "pattern_type": "route selection",
+          "description": "User consistently chooses Western line even when Harbour line presents an equivalent or equally optimal route.",
+          "frequency": 8,
+          "last_observed": "2024-06-08T12:00:00+05:30"
+        }
+      ],
+      "recommendations_for_other_agents": {
+        "transport_agent": "Prioritize Western line options when presenting travel routes, even when other lines offer similar efficiency.",
+        "schedule_agent": "Assume consistent travel durations based on Western line schedules.",
+        "wellness_agent": "No direct route implication; continue monitoring for stress or rest issues during commutes."
+      },
+      "confidence_score": 0.83
+    },
+    "metadata": {
+      "agent_name": "Preference Learning Agent",
+      "timestamp": "2024-06-08T12:10:00+05:30"
+    }
+  },
+  "test_passed": true
+}

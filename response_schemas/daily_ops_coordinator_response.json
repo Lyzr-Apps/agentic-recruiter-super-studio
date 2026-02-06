@@ -1,0 +1,267 @@
+{
+  "agent_name": "Daily Ops Coordinator",
+  "agent_id": "6985879714456d4b2db732d8",
+  "agent_purpose": "daily_ops_coordination",
+  "description": "Master coordinator synthesizing inputs from all sub-agents to deliver unified daily operations recommendations for Mumbai students",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "unified_recommendation": {
+        "summary": "string",
+        "primary_action": "string",
+        "reasoning": "string",
+        "confidence_level": "string"
+      },
+      "transport_plan": {
+        "recommended_route": "string",
+        "mode": "string",
+        "departure_time": "string",
+        "eta": "string",
+        "cost": "number",
+        "safety_level": "string",
+        "alternatives": [
+          "string"
+        ]
+      },
+      "schedule_overview": {
+        "next_events": [
+          "string"
+        ],
+        "conflicts_resolved": [
+          "string"
+        ],
+        "buffer_status": "string"
+      },
+      "wellness_alerts": {
+        "immediate_actions": [
+          "string"
+        ],
+        "scheduled_reminders": [
+          "string"
+        ],
+        "wellness_score": "number"
+      },
+      "safety_notes": {
+        "overall_safety": "string",
+        "key_precautions": [
+          "string"
+        ],
+        "emergency_contacts_ready": "boolean"
+      },
+      "social_opportunities": {
+        "group_travel_available": "boolean",
+        "meeting_points": [
+          "string"
+        ],
+        "coordination_notes": "string"
+      },
+      "conflicts_and_tradeoffs": [
+        {
+          "conflict_type": "string",
+          "options": [
+            "string"
+          ],
+          "chosen_option": "string",
+          "rationale": "string"
+        }
+      ],
+      "user_preferences_applied": [
+        "string"
+      ],
+      "overall_confidence_score": "number"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string",
+      "sub_agents_consulted": [
+        "string"
+      ]
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "unified_recommendation": {
+        "summary": "Start your morning prep now, meet at Andheri Station main entrance by 8:35-8:40 AM for a group train to Churchgate, stay hydrated/snack, keep valuables secure, and board an 8:50 AM fast local train to arrive before your 9 AM lecture.",
+        "primary_action": "Begin prepping for departure (hydration, snack), head to Andheri Station, coordinate with friends, and take the 8:50 AM Western Line local train to Churchgate.",
+        "reasoning": "This plan meets your punctuality preference, groups social and safety advantages, time-optimizes via local train, and builds in buffers for prep, ticketing, and on-time lecture arrival.",
+        "confidence_level": "high"
+      },
+      "transport_plan": {
+        "recommended_route": "Andheri to Churchgate via fast Mumbai Western Line local train, target 8:50 AM departure.",
+        "mode": "local train",
+        "departure_time": "2024-06-13T08:50:00+05:30",
+        "eta": "2024-06-13T09:30:00+05:30",
+        "cost": 10,
+        "safety_level": "moderate",
+        "alternatives": [
+          "Ola/Uber direct cab (higher cost, safer, less crowd)",
+          "Metro + auto (less crowd, slower)",
+          "BEST bus (cheapest, slowest)"
+        ]
+      },
+      "schedule_overview": {
+        "next_events": [
+          "9:00 AM lecture at Churchgate"
+        ],
+        "conflicts_resolved": [
+          "Prep time and commute buffered to avoid delays."
+        ],
+        "buffer_status": "adequate"
+      },
+      "wellness_alerts": {
+        "immediate_actions": [
+          "Drink water before leaving home.",
+          "Pack a light snack (fruit/nuts)."
+        ],
+        "scheduled_reminders": [
+          "Hydration reminder at 8:30 AM during commute.",
+          "Relax for 10 mins after arrival at Churchgate before lecture starts."
+        ],
+        "wellness_score": 76
+      },
+      "safety_notes": {
+        "overall_safety": "moderate",
+        "key_precautions": [
+          "Keep valuables secure at station and on train.",
+          "Remain aware in crowded areas.",
+          "Use official apps/check train times."
+        ],
+        "emergency_contacts_ready": true
+      },
+      "social_opportunities": {
+        "group_travel_available": true,
+        "meeting_points": [
+          "Andheri Station main entrance (Western Line)"
+        ],
+        "coordination_notes": "Meet your group by 8:40 AM, board same train for a smoother and safer journey; grab chai/snack together before departing."
+      },
+      "conflicts_and_tradeoffs": [
+        {
+          "conflict_type": "Speed vs. Safety",
+          "options": [
+            "Take fast local train (faster, more crowded, some pickpocket risk)",
+            "Uber/cab (slower, less risk, high cost)"
+          ],
+          "chosen_option": "Fast local train with group for moderate safety and cost balance.",
+          "rationale": "Morning hours are relatively safe, group mitigates risks, and optimizes time/budget as per your usual choices."
+        }
+      ],
+      "user_preferences_applied": [
+        "Preferred local train for peak commute.",
+        "Preps allow 25+ min buffer.",
+        "Moderate punctuality (arrive 10-20 mins early).",
+        "Hydration/meal reminders set.",
+        "Group social travel coordination included."
+      ],
+      "overall_confidence_score": 0.91
+    },
+    "metadata": {
+      "agent_name": "Daily Ops Coordinator",
+      "timestamp": "2024-06-13T07:20:00+05:30",
+      "sub_agents_consulted": [
+        "Transport Intelligence Agent",
+        "Schedule Manager Agent",
+        "Wellness Coordinator Agent",
+        "Preference Learning Agent",
+        "Safety Monitor Agent",
+        "Social Planner Agent"
+      ]
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:21:39.104944",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "unified_recommendation": {
+        "summary": "Start your morning prep now, meet at Andheri Station main entrance by 8:35-8:40 AM for a group train to Churchgate, stay hydrated/snack, keep valuables secure, and board an 8:50 AM fast local train to arrive before your 9 AM lecture.",
+        "primary_action": "Begin prepping for departure (hydration, snack), head to Andheri Station, coordinate with friends, and take the 8:50 AM Western Line local train to Churchgate.",
+        "reasoning": "This plan meets your punctuality preference, groups social and safety advantages, time-optimizes via local train, and builds in buffers for prep, ticketing, and on-time lecture arrival.",
+        "confidence_level": "high"
+      },
+      "transport_plan": {
+        "recommended_route": "Andheri to Churchgate via fast Mumbai Western Line local train, target 8:50 AM departure.",
+        "mode": "local train",
+        "departure_time": "2024-06-13T08:50:00+05:30",
+        "eta": "2024-06-13T09:30:00+05:30",
+        "cost": 10,
+        "safety_level": "moderate",
+        "alternatives": [
+          "Ola/Uber direct cab (higher cost, safer, less crowd)",
+          "Metro + auto (less crowd, slower)",
+          "BEST bus (cheapest, slowest)"
+        ]
+      },
+      "schedule_overview": {
+        "next_events": [
+          "9:00 AM lecture at Churchgate"
+        ],
+        "conflicts_resolved": [
+          "Prep time and commute buffered to avoid delays."
+        ],
+        "buffer_status": "adequate"
+      },
+      "wellness_alerts": {
+        "immediate_actions": [
+          "Drink water before leaving home.",
+          "Pack a light snack (fruit/nuts)."
+        ],
+        "scheduled_reminders": [
+          "Hydration reminder at 8:30 AM during commute.",
+          "Relax for 10 mins after arrival at Churchgate before lecture starts."
+        ],
+        "wellness_score": 76
+      },
+      "safety_notes": {
+        "overall_safety": "moderate",
+        "key_precautions": [
+          "Keep valuables secure at station and on train.",
+          "Remain aware in crowded areas.",
+          "Use official apps/check train times."
+        ],
+        "emergency_contacts_ready": true
+      },
+      "social_opportunities": {
+        "group_travel_available": true,
+        "meeting_points": [
+          "Andheri Station main entrance (Western Line)"
+        ],
+        "coordination_notes": "Meet your group by 8:40 AM, board same train for a smoother and safer journey; grab chai/snack together before departing."
+      },
+      "conflicts_and_tradeoffs": [
+        {
+          "conflict_type": "Speed vs. Safety",
+          "options": [
+            "Take fast local train (faster, more crowded, some pickpocket risk)",
+            "Uber/cab (slower, less risk, high cost)"
+          ],
+          "chosen_option": "Fast local train with group for moderate safety and cost balance.",
+          "rationale": "Morning hours are relatively safe, group mitigates risks, and optimizes time/budget as per your usual choices."
+        }
+      ],
+      "user_preferences_applied": [
+        "Preferred local train for peak commute.",
+        "Preps allow 25+ min buffer.",
+        "Moderate punctuality (arrive 10-20 mins early).",
+        "Hydration/meal reminders set.",
+        "Group social travel coordination included."
+      ],
+      "overall_confidence_score": 0.91
+    },
+    "metadata": {
+      "agent_name": "Daily Ops Coordinator",
+      "timestamp": "2024-06-13T07:20:00+05:30",
+      "sub_agents_consulted": [
+        "Transport Intelligence Agent",
+        "Schedule Manager Agent",
+        "Wellness Coordinator Agent",
+        "Preference Learning Agent",
+        "Safety Monitor Agent",
+        "Social Planner Agent"
+      ]
+    }
+  },
+  "test_passed": true
+}

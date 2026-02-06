@@ -1,0 +1,72 @@
+{
+  "workflow_created": true,
+  "agents": {
+    "daily_ops_coordinator": {
+      "agent_id": "6985879714456d4b2db732d8",
+      "name": "Daily Ops Coordinator",
+      "type": "manager",
+      "status": "active",
+      "managed_agents": [
+        "698586eab90162af337b1e88",
+        "698586fdab4bf65a66ad0799",
+        "698587171caa4e686dd66dd8",
+        "6985873449f279d47448a5d2",
+        "6985874f1caa4e686dd66ddd",
+        "6985876ac613a65b3c4193f4"
+      ]
+    },
+    "transport_intelligence_agent": {
+      "agent_id": "698586eab90162af337b1e88",
+      "name": "Transport Intelligence Agent",
+      "type": "sub_agent",
+      "status": "active",
+      "provider": "Perplexity",
+      "model": "sonar-pro"
+    },
+    "schedule_manager_agent": {
+      "agent_id": "698586fdab4bf65a66ad0799",
+      "name": "Schedule Manager Agent",
+      "type": "sub_agent",
+      "status": "active",
+      "provider": "OpenAI",
+      "model": "gpt-4.1"
+    },
+    "wellness_coordinator_agent": {
+      "agent_id": "698587171caa4e686dd66dd8",
+      "name": "Wellness Coordinator Agent",
+      "type": "sub_agent",
+      "status": "active",
+      "provider": "OpenAI",
+      "model": "gpt-4.1"
+    },
+    "preference_learning_agent": {
+      "agent_id": "6985873449f279d47448a5d2",
+      "name": "Preference Learning Agent",
+      "type": "sub_agent",
+      "status": "active",
+      "provider": "OpenAI",
+      "model": "gpt-4.1"
+    },
+    "safety_monitor_agent": {
+      "agent_id": "6985874f1caa4e686dd66ddd",
+      "name": "Safety Monitor Agent",
+      "type": "sub_agent",
+      "status": "active",
+      "provider": "Perplexity",
+      "model": "sonar-pro"
+    },
+    "social_planner_agent": {
+      "agent_id": "6985876ac613a65b3c4193f4",
+      "name": "Social Planner Agent",
+      "type": "sub_agent",
+      "status": "active",
+      "provider": "OpenAI",
+      "model": "gpt-4.1"
+    }
+  },
+  "total_agents": 7,
+  "manager_agents": 1,
+  "sub_agents": 6,
+  "created_at": "2026-02-06T00:00:00Z",
+  "workflow_pattern": "manager_subagent"
+}

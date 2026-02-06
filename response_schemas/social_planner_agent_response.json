@@ -1,0 +1,248 @@
+{
+  "agent_name": "Social Planner Agent",
+  "agent_id": "6985876ac613a65b3c4193f4",
+  "agent_purpose": "social_planning",
+  "description": "Coordinates group travel logistics, calculates optimal meeting points, and manages shared commute planning for students",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "group_travel_plan": {
+        "participants": [
+          "string"
+        ],
+        "meeting_point": {
+          "location": "string",
+          "coordinates": "string",
+          "why_optimal": "string"
+        },
+        "shared_route": {
+          "route_details": "string",
+          "mode": "string",
+          "total_cost": "number",
+          "cost_per_person": "number",
+          "eta": "string"
+        }
+      },
+      "individual_to_meetup": [
+        {
+          "participant": "string",
+          "from_location": "string",
+          "to_meeting_point": {
+            "route": "string",
+            "eta_minutes": "number",
+            "cost": "number"
+          },
+          "arrival_time": "string"
+        }
+      ],
+      "coordination_suggestions": [
+        {
+          "type": "string",
+          "suggestion": "string",
+          "benefits": "string"
+        }
+      ],
+      "social_opportunities": [
+        {
+          "activity": "string",
+          "location": "string",
+          "duration_minutes": "number",
+          "suitable_for": [
+            "string"
+          ]
+        }
+      ],
+      "confidence_score": "number"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "group_travel_plan": {
+        "participants": [
+          "Borivali",
+          "Thane",
+          "Andheri"
+        ],
+        "meeting_point": {
+          "location": "Bandra Station (West) - Main Entrance",
+          "coordinates": "19.0550, 72.8407",
+          "why_optimal": "Bandra is centrally accessible for participants coming from Borivali (Western Line), Andheri (Western Line), and Thane (Trans-Harbour/Western via Kanjurmarg-Vikhroli or Kurla). The main entrance makes an easy and visible meetup spot with seating nearby."
+        },
+        "shared_route": {
+          "route_details": "All participants arrive at Bandra Station; regroup and share a rickshaw, cab, or walk together to a nearby caf\u00e9 (if desired).",
+          "mode": "Suburban train + Walk/Rickshaw",
+          "total_cost": 210,
+          "cost_per_person": 70,
+          "eta": "2024-06-29T18:00:00+05:30"
+        }
+      },
+      "individual_to_meetup": [
+        {
+          "participant": "Borivali",
+          "from_location": "Borivali Station (West)",
+          "to_meeting_point": {
+            "route": "Direct Western Line local train to Bandra, 11 stations, then 2-minute walk to main entrance",
+            "eta_minutes": 33,
+            "cost": 25
+          },
+          "arrival_time": "2024-06-29T17:55:00+05:30"
+        },
+        {
+          "participant": "Thane",
+          "from_location": "Thane Station (East)",
+          "to_meeting_point": {
+            "route": "Central Line to Kurla, then Harbour Line to Bandra (or Central to Dadar, then switch to Western Line to Bandra)",
+            "eta_minutes": 42,
+            "cost": 35
+          },
+          "arrival_time": "2024-06-29T17:48:00+05:30"
+        },
+        {
+          "participant": "Andheri",
+          "from_location": "Andheri Station (West)",
+          "to_meeting_point": {
+            "route": "Western Line local train to Bandra, 4 stations, then 2-minute walk to main entrance",
+            "eta_minutes": 18,
+            "cost": 10
+          },
+          "arrival_time": "2024-06-29T17:57:00+05:30"
+        }
+      ],
+      "coordination_suggestions": [
+        {
+          "type": "timing",
+          "suggestion": "Since Thane's route may take the longest, Borivali and Andheri friends can plan to take slightly later trains for a more synchronized arrival.",
+          "benefits": "No one needs to wait too long; group arrives together."
+        },
+        {
+          "type": "cost_split",
+          "suggestion": "If continuing to a caf\u00e9 or event post-meetup, consider sharing a cab/rickshaw from Bandra Station and splitting the cost equally.",
+          "benefits": "Fair, economical, and social travel to next destination."
+        }
+      ],
+      "social_opportunities": [
+        {
+          "activity": "Quick hangout at \u2018The Bagel Shop\u2019 caf\u00e9 near Bandra Station",
+          "location": "The Bagel Shop, Bandra West",
+          "duration_minutes": 40,
+          "suitable_for": [
+            "All participants arriving early or on time"
+          ]
+        },
+        {
+          "activity": "Street snack tasting together",
+          "location": "Near Bandra Station, West Side",
+          "duration_minutes": 20,
+          "suitable_for": [
+            "Anyone waiting for the full group"
+          ]
+        }
+      ],
+      "confidence_score": 0.95
+    },
+    "metadata": {
+      "agent_name": "Social Planner Agent",
+      "timestamp": "2024-06-29T15:05:00+05:30"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:20:53.484932",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "group_travel_plan": {
+        "participants": [
+          "Borivali",
+          "Thane",
+          "Andheri"
+        ],
+        "meeting_point": {
+          "location": "Bandra Station (West) - Main Entrance",
+          "coordinates": "19.0550, 72.8407",
+          "why_optimal": "Bandra is centrally accessible for participants coming from Borivali (Western Line), Andheri (Western Line), and Thane (Trans-Harbour/Western via Kanjurmarg-Vikhroli or Kurla). The main entrance makes an easy and visible meetup spot with seating nearby."
+        },
+        "shared_route": {
+          "route_details": "All participants arrive at Bandra Station; regroup and share a rickshaw, cab, or walk together to a nearby caf\u00e9 (if desired).",
+          "mode": "Suburban train + Walk/Rickshaw",
+          "total_cost": 210,
+          "cost_per_person": 70,
+          "eta": "2024-06-29T18:00:00+05:30"
+        }
+      },
+      "individual_to_meetup": [
+        {
+          "participant": "Borivali",
+          "from_location": "Borivali Station (West)",
+          "to_meeting_point": {
+            "route": "Direct Western Line local train to Bandra, 11 stations, then 2-minute walk to main entrance",
+            "eta_minutes": 33,
+            "cost": 25
+          },
+          "arrival_time": "2024-06-29T17:55:00+05:30"
+        },
+        {
+          "participant": "Thane",
+          "from_location": "Thane Station (East)",
+          "to_meeting_point": {
+            "route": "Central Line to Kurla, then Harbour Line to Bandra (or Central to Dadar, then switch to Western Line to Bandra)",
+            "eta_minutes": 42,
+            "cost": 35
+          },
+          "arrival_time": "2024-06-29T17:48:00+05:30"
+        },
+        {
+          "participant": "Andheri",
+          "from_location": "Andheri Station (West)",
+          "to_meeting_point": {
+            "route": "Western Line local train to Bandra, 4 stations, then 2-minute walk to main entrance",
+            "eta_minutes": 18,
+            "cost": 10
+          },
+          "arrival_time": "2024-06-29T17:57:00+05:30"
+        }
+      ],
+      "coordination_suggestions": [
+        {
+          "type": "timing",
+          "suggestion": "Since Thane's route may take the longest, Borivali and Andheri friends can plan to take slightly later trains for a more synchronized arrival.",
+          "benefits": "No one needs to wait too long; group arrives together."
+        },
+        {
+          "type": "cost_split",
+          "suggestion": "If continuing to a caf\u00e9 or event post-meetup, consider sharing a cab/rickshaw from Bandra Station and splitting the cost equally.",
+          "benefits": "Fair, economical, and social travel to next destination."
+        }
+      ],
+      "social_opportunities": [
+        {
+          "activity": "Quick hangout at \u2018The Bagel Shop\u2019 caf\u00e9 near Bandra Station",
+          "location": "The Bagel Shop, Bandra West",
+          "duration_minutes": 40,
+          "suitable_for": [
+            "All participants arriving early or on time"
+          ]
+        },
+        {
+          "activity": "Street snack tasting together",
+          "location": "Near Bandra Station, West Side",
+          "duration_minutes": 20,
+          "suitable_for": [
+            "Anyone waiting for the full group"
+          ]
+        }
+      ],
+      "confidence_score": 0.95
+    },
+    "metadata": {
+      "agent_name": "Social Planner Agent",
+      "timestamp": "2024-06-29T15:05:00+05:30"
+    }
+  },
+  "test_passed": true
+}

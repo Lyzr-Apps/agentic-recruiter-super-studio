@@ -1,0 +1,111 @@
+{
+  "agent_name": "Transport Intelligence Agent",
+  "agent_id": "698586eab90162af337b1e88",
+  "agent_purpose": "transport_intelligence",
+  "description": "Provides real-time Mumbai transport analysis with route recommendations, ETAs, cost comparisons, and disruption alerts",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "recommended_route": {
+        "mode": "string",
+        "route_details": "string",
+        "eta_minutes": "number",
+        "cost_rupees": "number",
+        "crowd_level": "string"
+      },
+      "alternatives": [
+        {
+          "mode": "string",
+          "route_details": "string",
+          "eta_minutes": "number",
+          "cost_rupees": "number",
+          "tradeoff_note": "string"
+        }
+      ],
+      "disruptions": [
+        "string"
+      ],
+      "confidence_score": "number"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "recommended_route": {
+        "mode": "local train",
+        "route_details": "Take a local train from Andheri to Churchgate on the Western Line.",
+        "eta_minutes": 30,
+        "cost_rupees": 10,
+        "crowd_level": "high"
+      },
+      "alternatives": [
+        {
+          "mode": "metro",
+          "route_details": "Take the Metro Line 1 from Andheri West to D N Nagar, then transfer to a local train to Churchgate.",
+          "eta_minutes": 45,
+          "cost_rupees": 25,
+          "tradeoff_note": "Longer travel time but would avoid high crowds on specific local trains."
+        },
+        {
+          "mode": "auto",
+          "route_details": "Use an auto-rickshaw directly from Andheri to Churchgate.",
+          "eta_minutes": 60,
+          "cost_rupees": 150,
+          "tradeoff_note": "Most expensive option with longer travel time due to traffic."
+        }
+      ],
+      "disruptions": [
+        "None reported at this time."
+      ],
+      "confidence_score": 0.85
+    },
+    "metadata": {
+      "agent_name": "Transport Intelligence Agent",
+      "timestamp": "2023-10-04T07:45:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:19:59.403538",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "recommended_route": {
+        "mode": "local train",
+        "route_details": "Take a local train from Andheri to Churchgate on the Western Line.",
+        "eta_minutes": 30,
+        "cost_rupees": 10,
+        "crowd_level": "high"
+      },
+      "alternatives": [
+        {
+          "mode": "metro",
+          "route_details": "Take the Metro Line 1 from Andheri West to D N Nagar, then transfer to a local train to Churchgate.",
+          "eta_minutes": 45,
+          "cost_rupees": 25,
+          "tradeoff_note": "Longer travel time but would avoid high crowds on specific local trains."
+        },
+        {
+          "mode": "auto",
+          "route_details": "Use an auto-rickshaw directly from Andheri to Churchgate.",
+          "eta_minutes": 60,
+          "cost_rupees": 150,
+          "tradeoff_note": "Most expensive option with longer travel time due to traffic."
+        }
+      ],
+      "disruptions": [
+        "None reported at this time."
+      ],
+      "confidence_score": 0.85
+    },
+    "metadata": {
+      "agent_name": "Transport Intelligence Agent",
+      "timestamp": "2023-10-04T07:45:00Z"
+    }
+  },
+  "test_passed": true
+}

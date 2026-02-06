@@ -1,0 +1,170 @@
+{
+  "agent_name": "Wellness Coordinator Agent",
+  "agent_id": "698587171caa4e686dd66dd8",
+  "agent_purpose": "wellness_coordination",
+  "description": "Monitors student wellness and generates context-aware reminders for hydration, meals, rest, and emergency health alerts",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "hydration_reminders": [
+        {
+          "time": "string",
+          "reason": "string",
+          "urgency": "string"
+        }
+      ],
+      "meal_suggestions": [
+        {
+          "meal_type": "string",
+          "suggested_time": "string",
+          "duration_available_minutes": "number",
+          "location_suggestions": [
+            "string"
+          ]
+        }
+      ],
+      "rest_recommendations": [
+        {
+          "time_slot": "string",
+          "duration_minutes": "number",
+          "reason": "string"
+        }
+      ],
+      "emergency_alerts": [
+        "any"
+      ],
+      "wellness_score": "number",
+      "confidence_score": "number"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "hydration_reminders": [
+        {
+          "time": "2024-06-21T08:00:00+05:30",
+          "reason": "Start of commute; hydrate before long travel.",
+          "urgency": "medium"
+        },
+        {
+          "time": "2024-06-21T09:00:00+05:30",
+          "reason": "Midway through commute; reduce dehydration due to travel.",
+          "urgency": "medium"
+        },
+        {
+          "time": "2024-06-21T10:30:00+05:30",
+          "reason": "Lecture session start; ensure hydration for optimal focus.",
+          "urgency": "medium"
+        },
+        {
+          "time": "2024-06-21T12:00:00+05:30",
+          "reason": "Midway through lectures; prevent fatigue and maintain alertness.",
+          "urgency": "high"
+        }
+      ],
+      "meal_suggestions": [
+        {
+          "meal_type": "breakfast",
+          "suggested_time": "2024-06-21T07:30:00+05:30",
+          "duration_available_minutes": 20,
+          "location_suggestions": [
+            "Home",
+            "Nearby caf\u00e9 en route"
+          ]
+        },
+        {
+          "meal_type": "snack",
+          "suggested_time": "2024-06-21T13:30:00+05:30",
+          "duration_available_minutes": 15,
+          "location_suggestions": [
+            "College canteen",
+            "Quick nearby snack stall"
+          ]
+        }
+      ],
+      "rest_recommendations": [
+        {
+          "time_slot": "2024-06-21T13:00:00+05:30",
+          "duration_minutes": 10,
+          "reason": "Short recharge break after intensive lecture block."
+        }
+      ],
+      "emergency_alerts": [],
+      "wellness_score": 68,
+      "confidence_score": 0.93
+    },
+    "metadata": {
+      "agent_name": "Wellness Coordinator Agent",
+      "timestamp": "2024-06-21T06:30:00+05:30"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:20:16.981564",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "hydration_reminders": [
+        {
+          "time": "2024-06-21T08:00:00+05:30",
+          "reason": "Start of commute; hydrate before long travel.",
+          "urgency": "medium"
+        },
+        {
+          "time": "2024-06-21T09:00:00+05:30",
+          "reason": "Midway through commute; reduce dehydration due to travel.",
+          "urgency": "medium"
+        },
+        {
+          "time": "2024-06-21T10:30:00+05:30",
+          "reason": "Lecture session start; ensure hydration for optimal focus.",
+          "urgency": "medium"
+        },
+        {
+          "time": "2024-06-21T12:00:00+05:30",
+          "reason": "Midway through lectures; prevent fatigue and maintain alertness.",
+          "urgency": "high"
+        }
+      ],
+      "meal_suggestions": [
+        {
+          "meal_type": "breakfast",
+          "suggested_time": "2024-06-21T07:30:00+05:30",
+          "duration_available_minutes": 20,
+          "location_suggestions": [
+            "Home",
+            "Nearby caf\u00e9 en route"
+          ]
+        },
+        {
+          "meal_type": "snack",
+          "suggested_time": "2024-06-21T13:30:00+05:30",
+          "duration_available_minutes": 15,
+          "location_suggestions": [
+            "College canteen",
+            "Quick nearby snack stall"
+          ]
+        }
+      ],
+      "rest_recommendations": [
+        {
+          "time_slot": "2024-06-21T13:00:00+05:30",
+          "duration_minutes": 10,
+          "reason": "Short recharge break after intensive lecture block."
+        }
+      ],
+      "emergency_alerts": [],
+      "wellness_score": 68,
+      "confidence_score": 0.93
+    },
+    "metadata": {
+      "agent_name": "Wellness Coordinator Agent",
+      "timestamp": "2024-06-21T06:30:00+05:30"
+    }
+  },
+  "test_passed": true
+}
