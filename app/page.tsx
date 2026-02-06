@@ -256,188 +256,111 @@ export default function Home() {
     }
   }
 
-  const getScoreColor = (score: number) => {
-    if (score >= 80) return '#10B981' // green
-    if (score >= 60) return '#FBBF24' // yellow
-    return '#FF6B6B' // coral red
-  }
-
-  const getCategoryBadgeColor = (category: string) => {
-    switch (category) {
-      case 'Schedule': return 'bg-green-600'
-      case 'Review': return 'bg-yellow-600'
-      case 'Reject': return 'bg-red-600'
-      default: return 'bg-gray-600'
-    }
-  }
-
   const formatTimestamp = (date: Date) => {
     return date.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' })
   }
 
-  const getLogColor = (type: string) => {
-    switch (type) {
-      case 'success': return 'text-green-400'
-      case 'error': return 'text-red-400'
-      case 'warning': return 'text-yellow-400'
-      default: return 'text-green-300'
-    }
-  }
-
   return (
-    <div style={{ backgroundColor: '#FFFDF5', minHeight: '100vh', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}>
+    <div className="bg-[#FFFDF5] min-h-screen font-sans">
       {/* Header */}
-      <div style={{
-        backgroundColor: '#000000',
-        color: '#FFFDF5',
-        padding: '24px',
-        borderBottom: '3px solid #000000',
-        boxShadow: '6px 6px 0px rgba(0,0,0,0.3)'
-      }}>
-        <h1 style={{
-          fontSize: '32px',
-          fontWeight: '800',
-          textTransform: 'uppercase',
-          letterSpacing: '-0.05em',
-          margin: 0,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '12px'
-        }}>
+      <div className="bg-black text-[#FFFDF5] p-6 border-b-[3px] border-black shadow-[6px_6px_0px_rgba(0,0,0,0.3)]">
+        <h1 className="text-[32px] font-extrabold uppercase tracking-tight m-0 flex items-center gap-3">
           <FaBriefcase size={32} />
           AGENTIC RECRUITER
         </h1>
-        <p style={{ margin: '8px 0 0 0', fontSize: '14px', opacity: 0.8 }}>
+        <p className="m-0 mt-2 text-sm opacity-80">
           AI-Powered HR Recruitment Dashboard
         </p>
       </div>
 
       {/* Main Grid Layout */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '400px 1fr',
-        gap: '24px',
-        padding: '24px',
-        maxWidth: '1600px',
-        margin: '0 auto'
-      }}>
+      <div className="grid grid-cols-[400px_1fr] gap-6 p-6 max-w-[1600px] mx-auto">
         {/* Left Column: Job Input Card */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          <div style={{
-            backgroundColor: '#FFFFFF',
-            border: '3px solid #000000',
-            borderRadius: '4px',
-            boxShadow: '6px 6px 0px #000000',
-            padding: '24px'
-          }}>
-            <h2 style={{
-              fontSize: '18px',
-              fontWeight: '800',
-              textTransform: 'uppercase',
-              marginBottom: '16px',
-              letterSpacing: '-0.02em'
-            }}>
-              <MdWork style={{ display: 'inline', marginRight: '8px' }} />
+        <div className="flex flex-col gap-6">
+          <div className="bg-white border-[3px] border-black rounded shadow-[6px_6px_0px_#000000] p-6">
+            <h2 className="text-lg font-extrabold uppercase mb-4 tracking-tight">
+              <MdWork className="inline mr-2" />
               NEW JOB POSTING
             </h2>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div className="flex flex-col gap-4">
               <div>
-                <Label htmlFor="title" style={{ fontWeight: '700', fontSize: '12px', textTransform: 'uppercase' }}>Job Title</Label>
+                <Label htmlFor="title" className="font-bold text-xs uppercase">Job Title</Label>
                 <Input
                   id="title"
                   value={jobDetails.title}
                   onChange={(e) => setJobDetails(prev => ({ ...prev, title: e.target.value }))}
                   placeholder="e.g., Senior Full Stack Developer"
-                  style={{
-                    border: '3px solid #000000',
-                    borderRadius: '4px',
-                    padding: '12px',
-                    fontSize: '14px',
-                    fontWeight: '600'
-                  }}
+                  className="border-[3px] border-black rounded p-3 text-sm font-semibold"
                 />
               </div>
 
               <div>
-                <Label htmlFor="description" style={{ fontWeight: '700', fontSize: '12px', textTransform: 'uppercase' }}>Job Description</Label>
+                <Label htmlFor="description" className="font-bold text-xs uppercase">Job Description</Label>
                 <Textarea
                   id="description"
                   value={jobDetails.description}
                   onChange={(e) => setJobDetails(prev => ({ ...prev, description: e.target.value }))}
                   placeholder="Describe the role, responsibilities, and requirements..."
                   rows={4}
-                  style={{
-                    border: '3px solid #000000',
-                    borderRadius: '4px',
-                    padding: '12px',
-                    fontSize: '14px'
-                  }}
+                  className="border-[3px] border-black rounded p-3 text-sm"
                 />
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <Label htmlFor="salary_min" style={{ fontWeight: '700', fontSize: '12px', textTransform: 'uppercase' }}>Min Salary</Label>
+                  <Label htmlFor="salary_min" className="font-bold text-xs uppercase">Min Salary</Label>
                   <Input
                     id="salary_min"
                     type="number"
                     value={jobDetails.salary_min}
                     onChange={(e) => setJobDetails(prev => ({ ...prev, salary_min: e.target.value }))}
                     placeholder="60000"
-                    style={{ border: '3px solid #000000', borderRadius: '4px', padding: '12px' }}
+                    className="border-[3px] border-black rounded p-3"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="salary_max" style={{ fontWeight: '700', fontSize: '12px', textTransform: 'uppercase' }}>Max Salary</Label>
+                  <Label htmlFor="salary_max" className="font-bold text-xs uppercase">Max Salary</Label>
                   <Input
                     id="salary_max"
                     type="number"
                     value={jobDetails.salary_max}
                     onChange={(e) => setJobDetails(prev => ({ ...prev, salary_max: e.target.value }))}
                     placeholder="120000"
-                    style={{ border: '3px solid #000000', borderRadius: '4px', padding: '12px' }}
+                    className="border-[3px] border-black rounded p-3"
                   />
                 </div>
               </div>
 
               <div>
-                <Label htmlFor="skills" style={{ fontWeight: '700', fontSize: '12px', textTransform: 'uppercase' }}>Required Skills</Label>
+                <Label htmlFor="skills" className="font-bold text-xs uppercase">Required Skills</Label>
                 <Input
                   id="skills"
                   value={jobDetails.skills}
                   onChange={(e) => setJobDetails(prev => ({ ...prev, skills: e.target.value }))}
                   placeholder="React, Node.js, AWS, Python (comma-separated)"
-                  style={{ border: '3px solid #000000', borderRadius: '4px', padding: '12px' }}
+                  className="border-[3px] border-black rounded p-3"
                 />
               </div>
 
               <div>
-                <Label htmlFor="location" style={{ fontWeight: '700', fontSize: '12px', textTransform: 'uppercase' }}>Location</Label>
+                <Label htmlFor="location" className="font-bold text-xs uppercase">Location</Label>
                 <Input
                   id="location"
                   value={jobDetails.location}
                   onChange={(e) => setJobDetails(prev => ({ ...prev, location: e.target.value }))}
                   placeholder="San Francisco, CA / Remote"
-                  style={{ border: '3px solid #000000', borderRadius: '4px', padding: '12px' }}
+                  className="border-[3px] border-black rounded p-3"
                 />
               </div>
 
               <div>
-                <Label htmlFor="employment_type" style={{ fontWeight: '700', fontSize: '12px', textTransform: 'uppercase' }}>Employment Type</Label>
+                <Label htmlFor="employment_type" className="font-bold text-xs uppercase">Employment Type</Label>
                 <select
                   id="employment_type"
                   value={jobDetails.employment_type}
                   onChange={(e) => setJobDetails(prev => ({ ...prev, employment_type: e.target.value as any }))}
-                  style={{
-                    width: '100%',
-                    border: '3px solid #000000',
-                    borderRadius: '4px',
-                    padding: '12px',
-                    fontSize: '14px',
-                    fontWeight: '600',
-                    backgroundColor: '#FFFFFF'
-                  }}
+                  className="w-full border-[3px] border-black rounded p-3 text-sm font-semibold bg-white"
                 >
                   <option value="Full-time">Full-time</option>
                   <option value="Part-time">Part-time</option>
@@ -448,57 +371,32 @@ export default function Home() {
               <Button
                 onClick={handleBroadcastJob}
                 disabled={loading}
-                style={{
-                  backgroundColor: '#2563EB',
-                  color: '#FFFFFF',
-                  border: '3px solid #000000',
-                  borderRadius: '4px',
-                  padding: '16px',
-                  fontSize: '16px',
-                  fontWeight: '800',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.05em',
-                  boxShadow: '6px 6px 0px #000000',
-                  cursor: 'pointer',
-                  transition: 'transform 0.1s',
-                  width: '100%'
-                }}
-                onMouseDown={(e) => e.currentTarget.style.transform = 'translate(3px, 3px)'}
-                onMouseUp={(e) => e.currentTarget.style.transform = 'translate(0, 0)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'translate(0, 0)'}
+                className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white border-[3px] border-black rounded shadow-[6px_6px_0px_#000000] font-extrabold uppercase tracking-wide p-4 text-base transition-transform active:translate-x-[3px] active:translate-y-[3px]"
               >
-                <FaBriefcase style={{ marginRight: '8px', display: 'inline' }} />
+                <FaBriefcase className="mr-2 inline" />
                 {loading ? 'BROADCASTING...' : 'BROADCAST JOB'}
               </Button>
             </div>
 
             {/* Posting Results */}
             {postings.length > 0 && (
-              <div style={{ marginTop: '24px', borderTop: '3px solid #000000', paddingTop: '16px' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: '800', textTransform: 'uppercase', marginBottom: '12px' }}>
+              <div className="mt-6 border-t-[3px] border-black pt-4">
+                <h3 className="text-sm font-extrabold uppercase mb-3">
                   POSTED TO:
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div className="flex flex-col gap-2">
                   {postings.map((posting, idx) => (
-                    <div key={idx} style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      padding: '8px',
-                      backgroundColor: '#F0FDF4',
-                      border: '2px solid #10B981',
-                      borderRadius: '4px'
-                    }}>
+                    <div key={idx} className="flex items-center gap-2 p-2 bg-green-50 border-2 border-green-500 rounded">
                       {posting.platform === 'LinkedIn' && <FaLinkedin size={20} color="#0A66C2" />}
                       {posting.platform === 'Indeed' && <FaBriefcase size={20} color="#2164F3" />}
                       {posting.platform === 'Glassdoor' && <FaGlassdoor size={20} color="#0CAA41" />}
-                      <div style={{ flex: 1 }}>
-                        <div style={{ fontSize: '12px', fontWeight: '700' }}>{posting.platform}</div>
+                      <div className="flex-1">
+                        <div className="text-xs font-bold">{posting.platform}</div>
                         <a
                           href={`https://${posting.url}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ fontSize: '10px', color: '#2563EB', textDecoration: 'underline' }}
+                          className="text-[10px] text-[#2563EB] underline"
                         >
                           {posting.job_id}
                         </a>
@@ -513,51 +411,29 @@ export default function Home() {
         </div>
 
         {/* Right Column: Agent Feed */}
-        <div style={{
-          backgroundColor: '#000000',
-          border: '3px solid #000000',
-          borderRadius: '4px',
-          boxShadow: '6px 6px 0px #000000',
-          padding: '24px',
-          height: '600px',
-          display: 'flex',
-          flexDirection: 'column'
-        }}>
-          <h2 style={{
-            fontSize: '18px',
-            fontWeight: '800',
-            textTransform: 'uppercase',
-            marginBottom: '16px',
-            color: '#10B981',
-            letterSpacing: '0.05em',
-            fontFamily: 'monospace'
-          }}>
+        <div className="bg-black border-[3px] border-black rounded shadow-[6px_6px_0px_#000000] p-6 h-[600px] flex flex-col">
+          <h2 className="text-lg font-extrabold uppercase mb-4 text-[#10B981] tracking-wide font-mono">
             &gt; LIVE AGENT FEED
           </h2>
 
-          <div style={{
-            flex: 1,
-            overflowY: 'auto',
-            fontFamily: 'monospace',
-            fontSize: '13px',
-            lineHeight: '1.6',
-            backgroundColor: '#000000',
-            padding: '12px',
-            border: '2px solid #10B981',
-            borderRadius: '4px'
-          }}>
+          <div className="flex-1 overflow-y-auto font-mono text-sm leading-relaxed bg-black p-3 border-2 border-[#10B981] rounded">
             {agentLogs.length === 0 ? (
-              <div style={{ color: '#10B981', opacity: 0.5 }}>
+              <div className="text-[#10B981] opacity-50">
                 [SYSTEM] Waiting for agent activity...
               </div>
             ) : (
               agentLogs.map((log) => (
-                <div key={log.id} style={{ marginBottom: '8px' }}>
-                  <span style={{ color: '#666666' }}>[{formatTimestamp(log.timestamp)}]</span>
+                <div key={log.id} className="mb-2">
+                  <span className="text-gray-500">[{formatTimestamp(log.timestamp)}]</span>
                   {' '}
-                  <span style={{ color: '#FFFFFF', fontWeight: '700' }}>[{log.agent_name}]</span>
+                  <span className="text-white font-bold">[{log.agent_name}]</span>
                   {' '}
-                  <span className={getLogColor(log.type)} style={{ color: getLogColor(log.type) === 'text-green-400' ? '#4ADE80' : getLogColor(log.type) === 'text-red-400' ? '#FF6B6B' : getLogColor(log.type) === 'text-yellow-400' ? '#FBBF24' : '#10B981' }}>
+                  <span className={
+                    log.type === 'success' ? 'text-green-400' :
+                    log.type === 'error' ? 'text-[#FF6B6B]' :
+                    log.type === 'warning' ? 'text-yellow-400' :
+                    'text-[#10B981]'
+                  }>
                     {log.message}
                   </span>
                 </div>
@@ -569,56 +445,27 @@ export default function Home() {
       </div>
 
       {/* Bottom Section: Candidate Cards Rail */}
-      <div style={{ padding: '0 24px 24px 24px', maxWidth: '1600px', margin: '0 auto' }}>
-        <div style={{
-          backgroundColor: '#FFFFFF',
-          border: '3px solid #000000',
-          borderRadius: '4px',
-          boxShadow: '6px 6px 0px #000000',
-          padding: '24px'
-        }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-            <h2 style={{
-              fontSize: '18px',
-              fontWeight: '800',
-              textTransform: 'uppercase',
-              letterSpacing: '-0.02em',
-              margin: 0
-            }}>
-              <FaUserTie style={{ display: 'inline', marginRight: '8px' }} />
+      <div className="p-6 max-w-[1600px] mx-auto">
+        <div className="bg-white border-[3px] border-black rounded shadow-[6px_6px_0px_#000000] p-6">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-lg font-extrabold uppercase tracking-tight m-0">
+              <FaUserTie className="inline mr-2" />
               CANDIDATE PIPELINE
             </h2>
 
             <Button
               onClick={() => setShowResumeInput(!showResumeInput)}
-              style={{
-                backgroundColor: showResumeInput ? '#FF6B6B' : '#10B981',
-                color: '#FFFFFF',
-                border: '3px solid #000000',
-                borderRadius: '4px',
-                padding: '12px 20px',
-                fontSize: '14px',
-                fontWeight: '800',
-                textTransform: 'uppercase',
-                boxShadow: '4px 4px 0px #000000',
-                cursor: 'pointer'
-              }}
+              className={`${showResumeInput ? 'bg-[#FF6B6B] hover:bg-[#FF5252]' : 'bg-[#10B981] hover:bg-[#059669]'} text-white border-[3px] border-black rounded shadow-[4px_4px_0px_#000000] px-5 py-3 text-sm font-extrabold uppercase transition-transform active:translate-x-[2px] active:translate-y-[2px]`}
             >
-              <FaUpload style={{ marginRight: '8px', display: 'inline' }} />
+              <FaUpload className="mr-2 inline" />
               {showResumeInput ? 'CANCEL' : 'ANALYZE RESUME'}
             </Button>
           </div>
 
           {/* Resume Input Area */}
           {showResumeInput && (
-            <div style={{
-              marginBottom: '24px',
-              padding: '20px',
-              backgroundColor: '#F0F9FF',
-              border: '3px solid #2563EB',
-              borderRadius: '4px'
-            }}>
-              <Label style={{ fontWeight: '700', fontSize: '12px', textTransform: 'uppercase', marginBottom: '8px', display: 'block' }}>
+            <div className="mb-6 p-5 bg-blue-50 border-[3px] border-[#2563EB] rounded">
+              <Label className="font-bold text-xs uppercase mb-2 block">
                 PASTE RESUME TEXT
               </Label>
               <Textarea
@@ -626,57 +473,25 @@ export default function Home() {
                 onChange={(e) => setResumeText(e.target.value)}
                 placeholder="Paste candidate resume text here... Include name, email, phone, skills, experience, education..."
                 rows={6}
-                style={{
-                  border: '3px solid #000000',
-                  borderRadius: '4px',
-                  padding: '12px',
-                  fontSize: '14px',
-                  width: '100%',
-                  marginBottom: '12px'
-                }}
+                className="border-[3px] border-black rounded p-3 text-sm w-full mb-3"
               />
               <Button
                 onClick={handleResumeAnalysis}
                 disabled={loading || !resumeText.trim()}
-                style={{
-                  backgroundColor: '#2563EB',
-                  color: '#FFFFFF',
-                  border: '3px solid #000000',
-                  borderRadius: '4px',
-                  padding: '12px 20px',
-                  fontSize: '14px',
-                  fontWeight: '800',
-                  textTransform: 'uppercase',
-                  boxShadow: '4px 4px 0px #000000',
-                  cursor: 'pointer'
-                }}
+                className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white border-[3px] border-black rounded shadow-[4px_4px_0px_#000000] px-5 py-3 text-sm font-extrabold uppercase transition-transform active:translate-x-[2px] active:translate-y-[2px]"
               >
-                <HiOutlineDocumentText style={{ marginRight: '8px', display: 'inline' }} />
+                <HiOutlineDocumentText className="mr-2 inline" />
                 {loading ? 'ANALYZING...' : 'ANALYZE CANDIDATE'}
               </Button>
             </div>
           )}
 
           {/* Candidates Horizontal Scroll */}
-          <div style={{
-            display: 'flex',
-            gap: '16px',
-            overflowX: 'auto',
-            paddingBottom: '16px',
-            minHeight: '300px'
-          }}>
+          <div className="flex gap-4 overflow-x-auto pb-4 min-h-[300px]">
             {candidates.length === 0 ? (
-              <div style={{
-                flex: 1,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#666666',
-                padding: '40px'
-              }}>
-                <FaUserTie size={48} style={{ marginBottom: '16px', opacity: 0.3 }} />
-                <p style={{ fontSize: '16px', fontWeight: '600', textAlign: 'center' }}>
+              <div className="flex-1 flex flex-col items-center justify-center text-gray-600 p-10">
+                <FaUserTie size={48} className="mb-4 opacity-30" />
+                <p className="text-base font-semibold text-center">
                   No candidates yet. Upload a resume to get started!
                 </p>
               </div>
@@ -684,37 +499,20 @@ export default function Home() {
               candidates.map((candidate) => (
                 <div
                   key={candidate.id}
-                  style={{
-                    minWidth: '320px',
-                    maxWidth: '320px',
-                    backgroundColor: '#FFFFFF',
-                    border: '3px solid #000000',
-                    borderRadius: '4px',
-                    boxShadow: '6px 6px 0px #000000',
-                    padding: '20px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '12px'
-                  }}
+                  className="min-w-[320px] max-w-[320px] bg-white border-[3px] border-black rounded shadow-[6px_6px_0px_#000000] p-5 flex flex-col gap-3"
                 >
                   {/* Candidate Header */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                  <div className="flex justify-between items-start">
                     <div>
-                      <h3 style={{
-                        fontSize: '16px',
-                        fontWeight: '800',
-                        textTransform: 'uppercase',
-                        margin: 0,
-                        marginBottom: '4px'
-                      }}>
+                      <h3 className="text-base font-extrabold uppercase mb-1">
                         {candidate.name}
                       </h3>
-                      <div style={{ fontSize: '11px', color: '#666666', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <div className="text-xs text-gray-600 mb-1 flex items-center gap-1">
                         <MdEmail size={12} />
                         {candidate.email}
                       </div>
                       {candidate.phone && (
-                        <div style={{ fontSize: '11px', color: '#666666', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        <div className="text-xs text-gray-600 flex items-center gap-1">
                           <MdPhone size={12} />
                           {candidate.phone}
                         </div>
@@ -722,61 +520,39 @@ export default function Home() {
                     </div>
 
                     {/* Score Badge */}
-                    <div style={{
-                      width: '60px',
-                      height: '60px',
-                      borderRadius: '4px',
-                      backgroundColor: getScoreColor(candidate.score),
-                      border: '3px solid #000000',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexDirection: 'column',
-                      color: '#FFFFFF',
-                      fontWeight: '800'
-                    }}>
-                      <div style={{ fontSize: '24px' }}>{candidate.score}</div>
-                      <div style={{ fontSize: '9px' }}>SCORE</div>
+                    <div className={`w-[60px] h-[60px] rounded border-[3px] border-black flex items-center justify-center flex-col text-white font-extrabold ${
+                      candidate.score >= 80 ? 'bg-[#10B981]' :
+                      candidate.score >= 60 ? 'bg-[#FBBF24]' :
+                      'bg-[#FF6B6B]'
+                    }`}>
+                      <div className="text-2xl">{candidate.score}</div>
+                      <div className="text-[9px]">SCORE</div>
                     </div>
                   </div>
 
                   {/* Category Badge */}
                   <div>
-                    <span style={{
-                      display: 'inline-block',
-                      padding: '6px 12px',
-                      borderRadius: '4px',
-                      fontSize: '11px',
-                      fontWeight: '800',
-                      textTransform: 'uppercase',
-                      border: '2px solid #000000',
-                      color: '#FFFFFF'
-                    }}
-                    className={getCategoryBadgeColor(candidate.category)}
-                    >
-                      {candidate.category === 'Schedule' && <FaCheckCircle style={{ marginRight: '4px', display: 'inline' }} />}
-                      {candidate.category === 'Reject' && <FaTimesCircle style={{ marginRight: '4px', display: 'inline' }} />}
+                    <span className={`inline-block px-3 py-1.5 rounded text-xs font-extrabold uppercase border-2 border-black text-white ${
+                      candidate.category === 'Schedule' ? 'bg-green-600' :
+                      candidate.category === 'Review' ? 'bg-yellow-600' :
+                      'bg-red-600'
+                    }`}>
+                      {candidate.category === 'Schedule' && <FaCheckCircle className="mr-1 inline" />}
+                      {candidate.category === 'Reject' && <FaTimesCircle className="mr-1 inline" />}
                       {candidate.category}
                     </span>
                   </div>
 
                   {/* Skills Tags */}
                   <div>
-                    <div style={{ fontSize: '11px', fontWeight: '700', marginBottom: '6px', textTransform: 'uppercase' }}>
+                    <div className="text-xs font-bold mb-1.5 uppercase">
                       Skills:
                     </div>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                    <div className="flex flex-wrap gap-1.5">
                       {candidate.skills.slice(0, 6).map((skill, idx) => (
                         <span
                           key={idx}
-                          style={{
-                            padding: '4px 10px',
-                            border: '2px solid #000000',
-                            borderRadius: '4px',
-                            fontSize: '10px',
-                            fontWeight: '600',
-                            backgroundColor: '#FFFDF5'
-                          }}
+                          className="px-2.5 py-1 border-2 border-black rounded text-[10px] font-semibold bg-[#FFFDF5]"
                         >
                           {skill}
                         </span>
@@ -785,49 +561,29 @@ export default function Home() {
                   </div>
 
                   {/* Experience & Education */}
-                  <div style={{ fontSize: '12px', color: '#333333' }}>
-                    <div style={{ marginBottom: '4px' }}>
-                      <FaTrophy style={{ display: 'inline', marginRight: '6px', color: '#FBBF24' }} />
+                  <div className="text-xs text-gray-800">
+                    <div className="mb-1">
+                      <FaTrophy className="inline mr-1.5 text-[#FBBF24]" />
                       <strong>{candidate.experience_years} years</strong> experience
                     </div>
-                    <div style={{ fontSize: '11px', color: '#666666' }}>
+                    <div className="text-xs text-gray-600">
                       {candidate.education}
                     </div>
                   </div>
 
                   {/* Reasoning */}
-                  <div style={{
-                    fontSize: '11px',
-                    color: '#333333',
-                    backgroundColor: '#F9FAFB',
-                    padding: '10px',
-                    borderRadius: '4px',
-                    border: '2px solid #E5E7EB',
-                    flex: 1
-                  }}>
+                  <div className="text-xs text-gray-800 bg-gray-50 p-2.5 rounded border-2 border-gray-200 flex-1">
                     {candidate.reasoning}
                   </div>
 
                   {/* Action Buttons */}
-                  <div style={{ display: 'flex', gap: '8px', marginTop: 'auto' }}>
+                  <div className="flex gap-2 mt-auto">
                     <Button
                       onClick={() => handleEngageCandidate(candidate)}
                       disabled={loading}
-                      style={{
-                        flex: 1,
-                        backgroundColor: '#2563EB',
-                        color: '#FFFFFF',
-                        border: '3px solid #000000',
-                        borderRadius: '4px',
-                        padding: '10px',
-                        fontSize: '12px',
-                        fontWeight: '800',
-                        textTransform: 'uppercase',
-                        boxShadow: '3px 3px 0px #000000',
-                        cursor: 'pointer'
-                      }}
+                      className="flex-1 bg-[#2563EB] hover:bg-[#1D4ED8] text-white border-[3px] border-black rounded shadow-[3px_3px_0px_#000000] p-2.5 text-xs font-extrabold uppercase transition-transform active:translate-x-[2px] active:translate-y-[2px]"
                     >
-                      <FaEnvelope style={{ marginRight: '6px', display: 'inline' }} />
+                      <FaEnvelope className="mr-1.5 inline" />
                       ENGAGE
                     </Button>
 
@@ -835,21 +591,9 @@ export default function Home() {
                       <Button
                         onClick={() => handleScheduleInterview(candidate)}
                         disabled={loading}
-                        style={{
-                          flex: 1,
-                          backgroundColor: '#10B981',
-                          color: '#FFFFFF',
-                          border: '3px solid #000000',
-                          borderRadius: '4px',
-                          padding: '10px',
-                          fontSize: '12px',
-                          fontWeight: '800',
-                          textTransform: 'uppercase',
-                          boxShadow: '3px 3px 0px #000000',
-                          cursor: 'pointer'
-                        }}
+                        className="flex-1 bg-[#10B981] hover:bg-[#059669] text-white border-[3px] border-black rounded shadow-[3px_3px_0px_#000000] p-2.5 text-xs font-extrabold uppercase transition-transform active:translate-x-[2px] active:translate-y-[2px]"
                       >
-                        <FaCalendarAlt style={{ marginRight: '6px', display: 'inline' }} />
+                        <FaCalendarAlt className="mr-1.5 inline" />
                         SCHEDULE
                       </Button>
                     )}
